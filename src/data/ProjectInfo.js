@@ -8,7 +8,7 @@ const projData=[
       "technologies": ["React.js", "Tailwind CSS", "Minimax Algorithm"],
       "github":"https://github.com/Umesh-Tummepalli/smart_playground.git",
       "liveURL":"https://smart-playground.vercel.app/tictactoe",
-      'imgPath':,
+      'imgPath':"tictactoe.png",
     },
     {
         "name": "Sudoku Master",
@@ -19,7 +19,7 @@ const projData=[
         "technologies": ["React.js", "Algorithm Design", "State Management"],
         "github":"https://github.com/Umesh-Tummepalli/smart_playground.git",
         "liveURL":"https://smart-playground.vercel.app/sudoku/easy?level=1",
-        'imgPath':,
+        'imgPath':"sudoku.png",
     },
     {
         "name": "Portfolio Website",
@@ -27,10 +27,10 @@ const projData=[
         "year": 2025,
         "organization": "Personal Project",
         "description": "Created responsive portfolio website using HTML5, CSS3, JavaScript, and GSAP. Implemented mobile-responsive design with cross-browser compatibility. Optimized site performance through asset optimization techniques.",
-      "technologies": ["HTML5", "CSS3", "JavaScript", "GSAP"],
-      "github":,
-      "liveURL":,
-      'imgPath':,
+      "technologies": ["ReactJS","HTML5", "CSS3", "JavaScript", "GSAP"],
+      "github":"https://github.com/Umesh-Tummepalli/Portfolio.git",
+      "liveURL":"/",
+      'imgPath':"portfolio.png",
     },
     {
         "name": "Virtual Study Environment",
@@ -39,9 +39,9 @@ const projData=[
         "organization": "SRM University KTR",
         "description": "Developed a task management system using HTML, CSS, JavaScript, and SQL database. Implemented interactive UI elements and draggable functionality for improved organization. Created responsive design ensuring compatibility across multiple devices.",
         "technologies": ["HTML", "CSS", "JavaScript", "SQL"],
-        "github":,
-        "liveURL":,
-        'imgPath':,
+        "github":"https://github.com/Umesh-Tummepalli/virtual-study-environment.git",
+        "liveURL":null,
+        'imgPath':"vsenv.png",
     },
     {
         "name": "React Cooking Recipe Application",
@@ -50,9 +50,9 @@ const projData=[
         "organization": "Personal Project",
         "description": "Built a React.js application featuring search functionality and filtering options. Designed intuitive user interface with responsive layout and mobile-first approach. Implemented state management for real-time ingredient suggestions.",
         "technologies": ["React.js", "JavaScript", "HTML", "CSS"],
-        "github":,
-        "liveURL":,
-        'imgPath':,
+        "github":"https://github.com/Umesh-Tummepalli/cooking-recipe-app.git",
+        "liveURL":null,
+        'imgPath':"recipeApp.png",
     },
     {
         "name": "AI Category Selector",
@@ -61,9 +61,9 @@ const projData=[
       "organization": "Personal Project",
       "description": "Developed AI-powered chatbot for categorizing queries into specific domains. Integrated Mistral AI API for natural language processing and responses. Implemented error handling and conversational UI for better user experience.",
       "technologies": ["JavaScript", "Mistral AI API", "NLP"],
-      "github":,
-      "liveURL":,
-      'imgPath':,
+      "github":"https://github.com/Umesh-Tummepalli/SmartChat.git",
+      "liveURL":null,
+      'imgPath':"AI.png",
     },
     {
         "name": "Drive",
@@ -72,9 +72,9 @@ const projData=[
         "organization": "Personal Project",
         "description": "Developed a MERN stack  storage application with file management capabilities. Implemented a file system architecture storing metadata in MongoDB while maintaining files in a flat storage structure. Designed secure authentication system with JWT tokens. Created intuitive UI for file uploads, organization, and sharing with role-based access control.",
         "technologies": ["MongoDB", "Express.js", "React.js", "Node.js", "JWT", "File System API"],
-        "github":,
-        "liveURL":,
-        'imgPath':,
+        "github":null,
+        "liveURL":null,
+        'imgPath':"drive.png",
     }
   ]
-export default projData
+export default projData;

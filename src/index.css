@@ -2,8 +2,10 @@
 @import "tailwindcss";
 
 body{
-  background-color: #000;
+  /* background-color: #000; */
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   overflow-x: hidden;
+  /* background-image: url("https://imgs.search.brave.com/5WziPWgapMv15u5R1X2Fi63j4Hx_la8IUr2aj8i7Q8w/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMtY3NlLmNhbnZh/LmNvbS9ibG9iLzE4/Njg4MTkvdG9vbHMt/ZmVhdHVyZV9iZy1y/ZW1vdmVyX2hlcm9f/bW9iaWxlNHguanBn"); */
 }
 .cube-container {
   bottom: 20px;

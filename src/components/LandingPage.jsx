@@ -4,14 +4,17 @@ import WaveLine from './WaveLine'
 import ProjectsShort from './ProjectsShort'
 import Cursor from "./Cursor";
 import AboutInShort from "./AboutInShort"
+import Button from './Button';
+import Footer from './Footer';
 const LandingPage = () => {
   return (
-    <div className="text-white bg-gradient-to-br from-black via-gray-900 to-black">
+    <div className="text-white">
       <Hero/>
       <WaveLine/>
       <AboutInShort/>
       <WaveLine/>
       <ProjectsShort/>
+      <WaveLine/>
     </div>
   )
 }

@@ -45,7 +45,7 @@ const TiltContainer = ({
       animationRef.current = gsap.to(container, {
         rotateX: tiltY,
         rotateY: tiltX,
-        scale: scaleOnHover,
+        // scale: scaleOnHover, 
         transformPerspective: perspective,
         transformOrigin: "center",
         ease: "power2.out",

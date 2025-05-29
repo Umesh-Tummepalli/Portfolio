@@ -14,7 +14,7 @@ gsap.registerPlugin(useGSAP);
 const Hero = () => {
   const titleRef = useRef([]);
   const imgContainerRef = useRef(null);
-  const titles = ["A Web Dev", "Problem Solver", "React Dev"];
+  const titles = ["A Web Dev.", "Problem Solver", "React Dev."];
 
   useGSAP(() => {
     // Animation for titles

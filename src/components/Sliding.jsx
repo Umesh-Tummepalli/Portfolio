@@ -1,144 +1,164 @@
 import React, { useRef, useEffect, useState } from "react";
-import { gsap } from "gsap";
 
-const SlidingText = ({
+const SlidingContent = ({
   children,
   speed = 50,
   direction = "left",
   pauseOnHover = true,
   onHoverEffect = true,
   gap = 32,
+  className = "",
+  style = {},
 }) => {
   const containerRef = useRef(null);
-  const sliderRef = useRef(null);
-  const timelineRef = useRef(null);
+  const contentRef = useRef(null);
+  const [cloneCount, setCloneCount] = useState(2);
   const [isReady, setIsReady] = useState(false);
 
+  // Calculate needed clones and setup animation
   useEffect(() => {
-    if (!containerRef.current || !sliderRef.current) return;
+    if (!containerRef.current || !contentRef.current) return;
 
-    const container = containerRef.current;
-    const slider = sliderRef.current;
+    const calculateClones = () => {
+      const container = containerRef.current;
+      const content = contentRef.current;
+
+      if (!container || !content) return;
+
+      const containerWidth = container.parentElement?.offsetWidth || 0;
+      const contentWidth = content.scrollWidth;
+
+      if (contentWidth === 0 || containerWidth === 0) return;
+
+      // Calculate how many clones we need to fill the viewport
+      const neededClones = Math.ceil((containerWidth * 2) / contentWidth);
+      setCloneCount(Math.max(2, neededClones));
+    };
 
     const setupAnimation = () => {
-      if (timelineRef.current) {
-        timelineRef.current.kill();
-      }
+      const container = containerRef.current;
+      const content = contentRef.current;
 
-      const existingClones = container.querySelectorAll('[data-clone="true"]');
-      existingClones.forEach((clone) => clone.remove());
+      if (!container || !content) return;
 
-      const sliderWidth = slider.offsetWidth;
+      const contentWidth = content.scrollWidth;
+      const duration = contentWidth / speed;
 
-      if (sliderWidth === 0) {
-        requestAnimationFrame(setupAnimation);
-        return;
-      }
-
-      const numberOfClones = Math.ceil(window.innerWidth / sliderWidth) + 2;
-
-      for (let i = 0; i < numberOfClones; i++) {
-        const clone = slider.cloneNode(true);
-        clone.setAttribute("data-clone", "true");
-        clone.setAttribute("aria-hidden", "true");
-        container.appendChild(clone);
-      }
-
-      const totalWidth = sliderWidth + gap;
-      const duration = totalWidth / speed;
-
-      timelineRef.current = gsap.timeline({
-        repeat: -1,
-        ease: "none",
-      });
-
-      gsap.set(container, {
-        x: direction === "left" ? 0 : -totalWidth,
-      });
-
-      timelineRef.current.to(container, {
-        x: direction === "left" ? -totalWidth : 0,
-        duration: duration,
-        ease: "none",
-      });
+      container.style.setProperty("--slide-duration", `${duration}s`);
+      container.style.setProperty("--slide-gap", `${gap}px`);
 
       setIsReady(true);
     };
 
+    calculateClones();
+    setupAnimation();
+
     const resizeObserver = new ResizeObserver(() => {
+      calculateClones();
       setupAnimation();
     });
 
-    resizeObserver.observe(slider);
-    setupAnimation();
+    if (containerRef.current?.parentElement) {
+      resizeObserver.observe(containerRef.current.parentElement);
+    }
 
-    return () => {
-      resizeObserver.disconnect();
-      if (timelineRef.current) {
-        timelineRef.current.kill();
-      }
-    };
-  }, [children, speed, direction, gap]);
+    return () => resizeObserver.disconnect();
+  }, [children, speed, gap]);
 
+  // Pause on hover
   useEffect(() => {
-    if (!pauseOnHover || !timelineRef.current || !containerRef.current) return;
+    if (!pauseOnHover || !containerRef.current || !isReady) return;
 
     const container = containerRef.current;
-    const timeline = timelineRef.current;
 
-    const handleMouseEnter = () => {
+    const handleEnter = () => {
       if (onHoverEffect) {
-        gsap.to(timeline, {
-          timeScale: 0,
-          duration: 0.3,
-          ease: "power2.out",
-        });
+        container.style.animationPlayState = "paused";
       }
     };
 
-    const handleMouseLeave = () => {
+    const handleLeave = () => {
       if (onHoverEffect) {
-        gsap.to(timeline, {
-          timeScale: 1,
-          duration: 0.3,
-          ease: "power2.out",
-        });
+        container.style.animationPlayState = "running";
       }
     };
 
-    container.addEventListener("mouseenter", handleMouseEnter);
-    container.addEventListener("mouseleave", handleMouseLeave);
+    container.addEventListener("mouseenter", handleEnter);
+    container.addEventListener("mouseleave", handleLeave);
 
     return () => {
-      container.removeEventListener("mouseenter", handleMouseEnter);
-      container.removeEventListener("mouseleave", handleMouseLeave);
+      container.removeEventListener("mouseenter", handleEnter);
+      container.removeEventListener("mouseleave", handleLeave);
     };
-  }, [pauseOnHover, isReady, onHoverEffect]);
+  }, [pauseOnHover, onHoverEffect, isReady]);
+
+  const renderContentItems = (items, keyPrefix = "") => {
+    return React.Children.map(items, (child, index) => {
+      return (
+        <div
+          key={`${keyPrefix}${index}`}
+          className="flex-shrink-0"
+          style={{ marginRight: `${gap}px` }}
+        >
+          {child}
+        </div>
+      );
+    });
+  };
 
   return (
-   <div className="relative w-full overflow-hidden pX-4">
-  {/* Left edge fade */}
-  <div className="pointer-events-none absolute left-0 top-0 h-full w-20 
-                  z-20 backdrop-blur-[2px]
-                  bg-gradient-to-r from-black/30 via-black/10 to-transparent" />
-  
-  {/* Right edge fade - FIXED */}
-  <div className="pointer-events-none absolute right-0 top-0 h-full w-20 
-                  z-20 backdrop-blur-[2px]
-                  bg-gradient-to-l from-black/30 via-black/10 to-transparent" />
+    <>
+      <style jsx>{`
+        @keyframes slide-left {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-50% - var(--slide-gap) / 2));
+          }
+        }
 
-  {/* Content */}
-  <div 
-    ref={containerRef} 
-    className="flex whitespace-nowrap will-change-transform"
-    style={{ gap: `${gap}px` }}
-  >
-    <div ref={sliderRef} className="flex" style={{ gap: `${gap}px` }}>
-      {children}
-    </div>
-  </div>
-</div>
+        .sliding-container {
+          display: flex;
+          animation: slide-left var(--slide-duration) linear infinite;
+        }
+
+        .sliding-container:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+
+      <div
+        className={`relative w-full overflow-hidden ${className}`}
+        style={style}
+      >
+{/* Left Edge Fade */}
+{/* <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-[#0f172a]/70 via-[#0f172a]/30 to-transparent backdrop-blur-sm pointer-events-none z-20" /> */}
+
+{/* Right Edge Fade */}
+{/* <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-[#0f172a]/70 via-[#0f172a]/30 to-transparent backdrop-blur-sm pointer-events-none z-20" /> */}
+
+
+        {/* Scrolling content container */}
+        <div
+          ref={containerRef}
+          className="sliding-container whitespace-nowrap will-change-transform"
+        >
+          {/* Original content */}
+          <div ref={contentRef} className="flex">
+            {renderContentItems(children, "original-")}
+          </div>
+
+          {/* Cloned content */}
+          {[...Array(cloneCount)].map((_, i) => (
+            <div key={`clone-${i}`} className="flex">
+              {renderContentItems(children, `clone-${i}-`)}
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
   );
 };
 
-export default SlidingText;
+export default SlidingContent;

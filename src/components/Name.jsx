@@ -63,7 +63,7 @@ const Name = ({text}) => {
       gsap.to(nameRef.current,{
         filter:"blur(0px)",
         stagger:0.1,
-        duration:1,
+        duration:3,
         opacity:1
       })
     },1550)
@@ -73,7 +73,7 @@ const Name = ({text}) => {
         {text.split("").map((item, index) => (
           <pre 
             key={index}
-            className="inline-block hover:cursor-pointer will-change-transform px-1  shadow-2xl shadow-black blur-[10px] opacity-0"
+            className="inline-block hover:cursor-pointer will-change-transform px-1   shadow-black blur-[10px] opacity-0"
             ref={(el) => (nameRef.current[index] = el)}
             onMouseEnter={() => handleMouseEnter(index)}
           >
