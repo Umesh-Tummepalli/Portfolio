@@ -2,18 +2,12 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 const Cursor = () => {
-  const cursorRef = useRef(null);
+  // const cursorRef = useRef();
   const circlesRef = useRef([]);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
-      gsap.to(cursorRef.current, {
-        x: clientX,
-        y: clientY,
-        duration: 0.1,
-      });
-
       circlesRef.current.forEach((circle, index) => {
         gsap.to(circle, {
           x: clientX,

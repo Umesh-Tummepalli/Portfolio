@@ -14,7 +14,7 @@ const ProjectShowcase = ({
   additionalLinks = [],
 }) => {
   return (
-    <div className="max-w-2xl  w-full m-10 rounded-2xl shadow-xl overflow-hidden z-30 bg-white/10 backdrop-blur-md border border-white/20 scale--90">
+    <div className="max-w-2xl  w-full lg:m-10 rounded-2xl shadow-xl overflow-hidden z-30 bg-white/10 backdrop-blur-md border border-white/20 scale">
       {/* Browser Header */}
       <div className="bg-black/70 px-4 py-3 flex items-center gap-2 border-b border-white/10">
         <div className="flex gap-2">
@@ -41,7 +41,7 @@ const ProjectShowcase = ({
       </div>
 
       {/* Project Information */}
-      <div className=" xl:px-8 py-4 space-y-6 text-white ">
+      <div className=" xl:px-8 py-4 space-y-6 text-white px-4">
         {/* Header Section */}
         <div className="">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">

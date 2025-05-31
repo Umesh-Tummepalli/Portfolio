@@ -49,7 +49,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className="w-full flex p-10 items-center justify-between">
+      <div className="w-full flex p-10 items-center justify-between flex-col md:flex-row">
         <div className="text-[9.3vw] font-[1000] m-0 leading-[0.8]">
           <h1 ref={(el) => (titleRef.current[0] = el)}>
             <Name text={"HI, I'm Umesh"} />
@@ -65,12 +65,12 @@ const Hero = () => {
 
         <div
           ref={imgContainerRef}
-          className="w-[40vw] max-w-[600px] perspective-1000"
+          className="md:w-[40vw] md:max-w-[600px] perspective-1000 w-full mt-8"
         >
           <TiltImage
             src={mainImage}
             alt="Main illustration"
-            classes="rounded-4xl w-full h-auto bg-white p-4 shadow-xl"
+            classes="rounded-4xl w-full h-auto bg-white p-4 shadow-xl "
             tiltIntensity={50}
           />
         </div>

@@ -3,9 +3,8 @@ import { gsap } from "gsap";
 
 const TiltContainer = ({
   children,
-  tiltIntensity = 15,
-  scaleOnHover = 1.05,
-  perspective = 1000,
+  tiltIntensity = 5,
+  perspective = 1500,
   className = "",
   style = {}
 }) => {

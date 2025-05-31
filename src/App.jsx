@@ -3,6 +3,8 @@ import LandingPage from './components/LandingPage'
 import {createBrowserRouter, RouterProvider} from "react-router-dom"  // Fixed import
 import NavBar from './components/NavBar'
 import AboutMain from './components/AboutMain'
+import ProjectMain from './components/ProjectMain'
+import ScrollToTop from './app/ScrollToTop'
 
 const App = () => {
   const router = createBrowserRouter([
@@ -17,6 +19,10 @@ const App = () => {
         {
           path: "about",
           element: <AboutMain />
+        },
+        {
+          path:'projects',
+          element:<ProjectMain/>
         }
       ]
     }

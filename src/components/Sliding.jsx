@@ -66,31 +66,7 @@ const SlidingContent = ({
   }, [children, speed, gap]);
 
   // Pause on hover
-  useEffect(() => {
-    if (!pauseOnHover || !containerRef.current || !isReady) return;
 
-    const container = containerRef.current;
-
-    const handleEnter = () => {
-      if (onHoverEffect) {
-        container.style.animationPlayState = "paused";
-      }
-    };
-
-    const handleLeave = () => {
-      if (onHoverEffect) {
-        container.style.animationPlayState = "running";
-      }
-    };
-
-    container.addEventListener("mouseenter", handleEnter);
-    container.addEventListener("mouseleave", handleLeave);
-
-    return () => {
-      container.removeEventListener("mouseenter", handleEnter);
-      container.removeEventListener("mouseleave", handleLeave);
-    };
-  }, [pauseOnHover, onHoverEffect, isReady]);
 
   const renderContentItems = (items, keyPrefix = "") => {
     return React.Children.map(items, (child, index) => {
@@ -117,14 +93,9 @@ const SlidingContent = ({
             transform: translateX(calc(-50% - var(--slide-gap) / 2));
           }
         }
-
         .sliding-container {
           display: flex;
           animation: slide-left var(--slide-duration) linear infinite;
-        }
-
-        .sliding-container:hover {
-          animation-play-state: paused;
         }
       `}</style>
 
@@ -132,11 +103,6 @@ const SlidingContent = ({
         className={`relative w-full overflow-hidden ${className}`}
         style={style}
       >
-{/* Left Edge Fade */}
-{/* <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-[#0f172a]/70 via-[#0f172a]/30 to-transparent backdrop-blur-sm pointer-events-none z-20" /> */}
-
-{/* Right Edge Fade */}
-{/* <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-[#0f172a]/70 via-[#0f172a]/30 to-transparent backdrop-blur-sm pointer-events-none z-20" /> */}
 
 
         {/* Scrolling content container */}

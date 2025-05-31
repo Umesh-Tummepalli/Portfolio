@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
 import Links from "./Links";
+import Logo from "../app/Logo";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,9 +22,9 @@ const Footer = () => {
 
     if (!footer || !title || !bigThing || !links || !particles) return;
 
-    // Create particles
     const createParticles = () => {
-      for (let i = 0; i < 20; i++) {
+      const count = window.innerWidth < 640 ? 8 : 20;
+      for (let i = 0; i < count; i++) {
         const particle = document.createElement("div");
         particle.className = "particle absolute w-2 h-2 bg-white rounded-full";
         particles.appendChild(particle);
@@ -51,10 +52,8 @@ const Footer = () => {
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: footer,
+        trigger: 'footer',
         start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none reverse",
       },
     });
 
@@ -72,8 +71,8 @@ const Footer = () => {
 
     tl.fromTo(
       footer,
-      { y: 100, opacity: 0, scale: 0.9, rotationX: -15 },
-      { y: 0, opacity: 1, scale: 1, rotationX: 0, duration: 1.2, ease: "power3.out" }
+      { y: 150, opacity: 0, scale: 0.95, filter: "blur(10px)" },
+      { y: 0, opacity: 1, scale: 1, filter: "blur(0px)", ease: "power2.out" }
     );
 
     tl.to(
@@ -82,25 +81,25 @@ const Footer = () => {
         opacity: 1,
         y: 0,
         rotationX: 0,
-        duration: 0.8,
+        duration: 1,
         stagger: 0.1,
         ease: "back.out(1.7)",
       },
-      "-=0.8"
+      "<"
     );
 
     tl.fromTo(
       bigThing,
       { scale: 0.5, opacity: 0, rotationY: -180 },
-      { scale: 1, opacity: 1, rotationY: 0, duration: 1, ease: "elastic.out(1, 0.5)" },
-      "-=0.5"
+      { scale: 1, opacity: 1, rotationY: 0, ease: "elastic.out(1, 0.5)" },
+      "<+0.2"
     );
 
     tl.fromTo(
       links,
       { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
-      "-=0.3"
+      { y: 0, opacity: 1, ease: "power2.out" },
+      "<+0.1"
     );
 
     const bigThingHover = () => {
@@ -113,12 +112,14 @@ const Footer = () => {
     bigThing.addEventListener("mouseenter", bigThingHover);
     bigThing.addEventListener("mouseleave", bigThingLeave);
 
-    gsap.to(footer, {
-      backgroundPosition: "200% 0%",
-      duration: 8,
-      repeat: -1,
-      ease: "none",
-    });
+    if (window.innerWidth > 640) {
+      gsap.to(footer, {
+        backgroundPosition: "200% 0%",
+        duration: 8,
+        repeat: -1,
+        ease: "none",
+      });
+    }
 
     return () => {
       bigThing.removeEventListener("mouseenter", bigThingHover);
@@ -130,28 +131,27 @@ const Footer = () => {
   return (
     <footer
       ref={footerRef}
-      className="relative text-center py-16 px-6 m-9 rounded-3xl overflow-hidden shadow-2xl bg-black text-white border border-gray-800"
-      style={{
-        backgroundSize: "200% 200%",
-      }}
+      className="relative text-center py-16 px-4 sm:px-6 lg:px-12 m-4 sm:m-6 lg:m-9 rounded-3xl overflow-hidden shadow-2xl 
+        bg-white/10 text-white border border-gray-800 backdrop-blur-md backdrop-saturate-150 flex justify-center items-center flex-col"
+      style={{ backgroundSize: "200% 200%" }}
     >
       {/* Particles */}
-      <div ref={particlesRef} className="absolute inset-0 pointer-events-none z-0" />
+      <div ref={particlesRef} className="absolute inset-0 pointer-events-none z-0 hidden sm:block" />
 
       {/* Glow Decorations */}
-      <div className="absolute top-4 left-4 w-20 h-20 bg-gradient-to-br from-gray-400 to-gray-700 rounded-full opacity-10 animate-pulse" />
-      <div className="absolute bottom-4 right-4 w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-400 rounded-full opacity-10 animate-pulse" />
-      <div className="absolute top-1/2 left-8 w-12 h-12 bg-gradient-to-br from-gray-500 to-gray-700 rounded-full opacity-10 animate-pulse" />
+      <div className="absolute top-4 left-4 w-20 h-20 bg-gradient-to-br from-gray-400 to-gray-700 rounded-full opacity-10 animate-pulse hidden sm:block" />
+      <div className="absolute bottom-4 right-4 w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-400 rounded-full opacity-10 animate-pulse hidden sm:block" />
+      <div className="absolute top-1/2 left-8 w-12 h-12 bg-gradient-to-br from-gray-500 to-gray-700 rounded-full opacity-10 animate-pulse hidden sm:block" />
 
       {/* Main Content */}
-      <div className="relative z-10 px-4 ">
+      <div className="relative px-4">
         <h2
           ref={titleRef}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight tracking-wide space-x-3"
-          style={{ 
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight tracking-wide space-x-3"
+          style={{
             perspective: "1000px",
             fontFamily: "'Bebas Neue', sans-serif",
-            letterSpacing: "1px"
+            letterSpacing: "1px",
           }}
         >
           Let's build the next{" "}
@@ -161,7 +161,7 @@ const Footer = () => {
             style={{
               fontFamily: "'Bebas Neue', sans-serif",
               textShadow: "0 0 20px rgba(255, 255, 255, 0.2)",
-              letterSpacing: "2px"
+              letterSpacing: "2px",
             }}
           >
             BIG-THING
@@ -170,7 +170,11 @@ const Footer = () => {
           together
         </h2>
 
-        <div ref={linksRef} className="flex justify-center mt-10">
+        <div className="flex justify-center items-center flex-wrap gap-4">
+          <Logo />
+        </div>
+
+        <div ref={linksRef} className="flex justify-center flex-wrap mt-6 sm:mt-10 gap-4">
           <Links />
         </div>
       </div>

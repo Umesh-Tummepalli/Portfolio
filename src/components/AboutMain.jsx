@@ -6,15 +6,23 @@ import gsap from "gsap";
 import Button from "./Button";
 import { FaLinux } from "react-icons/fa";
 import { SiC, SiCplusplus, SiExpress } from "react-icons/si";
-import { DiHtml5, DiCss3, DiJsBadge, DiJava, DiNodejsSmall } from "react-icons/di";
+import {
+  DiHtml5,
+  DiCss3,
+  DiJsBadge,
+  DiJava,
+  DiNodejsSmall,
+} from "react-icons/di";
 import { GrReactjs } from "react-icons/gr";
 import { SiTailwindcss } from "react-icons/si";
-import Resume from "../assets/Resume.pdf"
-
+import Resume from "../assets/Resume.pdf";
+import { useGSAP } from "@gsap/react";
 const AboutMain = () => {
   const moveElRef = useRef();
   const containerRef = useRef();
-
+  const imgRef = useRef();
+  const headingRef = useRef(); 
+  const pref = useRef(); 
   function handleMouseMove(el) {
     let xpos = el.clientX;
     let ypos = el.clientY;
@@ -26,21 +34,48 @@ const AboutMain = () => {
       y: cursorYpos,
     });
   }
-
+  useGSAP(() => {
+    const tl = gsap.timeline();
+    tl.from(containerRef.current, {
+      y: -1000,
+      scale: 0,
+      duration: 1,
+      ease: "back.out",
+    });
+    tl.from(imgRef.current, {
+      x: "-100%",
+      ease:"back.out",
+    });
+    tl.from(headingRef.current, {
+      x: "200%",
+      ease:"back.out"
+    });
+    tl.from(pref.current,{
+      y:"-110%",
+      filter:"blur(20px)",
+      opacity:0,
+      duration:1.5,
+      ease:"back.out"
+    })
+  });
   return (
-    <div className="text-white p-4">
-      <TiltContainer>
+    <div className="text-white p-4" id="aboutMain">
+      <TiltContainer >
         <section
-          className="lg:m-10 flex flex-col lg:flex-row backdrop-blur-[10px] backdrop-saturate-150 z-10 bg-white/10 border border-white/20 rounded-3xl shadow-xl relative overflow-hidden"
+          className="lg:m-10 flex flex-col lg:flex-row backdrop-blur-[10px] backdrop-saturate-150 z-10 bg-white/10 border border-white/20 rounded-3xl shadow-xl relative overflow-hidden "
           onMouseMove={handleMouseMove}
           ref={containerRef}
         >
           <section
-            className="w-full lg:w-1/2 p-9 space-y-4"
+            className="w-full lg:w-1/2 p-5 overflow-hidden"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
-            <h2 className="text-4xl font-bold">About Me</h2>
-            <p>
+            <h2 className="text-4xl font-bold border-b-1 pb-4 " ref={headingRef}>
+              About Me
+            </h2>
+            <div className="overflow-hidden">
+            <section className="space-y-2  pt-4 aboutPara" ref={pref}>
+            <p >
               Hi, I'm{" "}
               <span className="text-teal-400 font-semibold">
                 Umesh Tummepalli
@@ -107,15 +142,20 @@ const AboutMain = () => {
               sharpening both my development skills and my problem-solving
               mindset along the way.
             </p>
-            <a target="_blank" href={Resume}  className="text-end block">
+          </section>
+          </div>
+            <a target="_blank" href={Resume} className="lg:text-end block mt-3 text- ">
               <Button classes="">Download My Resume</Button>
             </a>
           </section>
-          <img
-            src={mainPhoto}
-            alt=""
-            className="w-full lg:w-1/2 object-cover"
-          />
+          <div className="lg:w-1/2 overflow-hidden">
+            <img
+              src={mainPhoto}
+              alt=""
+              className="w-full  object-cover h-full"
+              ref={imgRef}
+              />
+          </div>
           <div
             className="absolute p-20 bg-green-500 rounded-full blur-3xl -z-10 -translate-x-1/2 -translate-y-1/2"
             ref={moveElRef}
@@ -124,20 +164,18 @@ const AboutMain = () => {
       </TiltContainer>
       <section className="p-4 rounded-3xl backdrop-blur-3xl backdrop-saturate-150 bg-white/10 border-white/20 border-1 m-4 text-4xl">
         <SlidingContent>
-  <GrReactjs />
-  <DiHtml5 />
-  <DiCss3 />
-  <DiJsBadge />
-  <SiTailwindcss />
-  <DiJava />
-  <DiNodejsSmall />
-  <FaLinux />
-  <SiC />
-  <SiCplusplus />
-  <SiExpress />
-</SlidingContent>
-
-
+          <GrReactjs />
+          <DiHtml5 />
+          <DiCss3 />
+          <DiJsBadge />
+          <SiTailwindcss />
+          <DiJava />
+          <DiNodejsSmall />
+          <FaLinux />
+          <SiC />
+          <SiCplusplus />
+          <SiExpress />
+        </SlidingContent>
       </section>
       <section className="flex md:flex-row md:justify-around flex-col justify-center items-center">
         <section
