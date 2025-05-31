@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef,useEffect } from "react";
 import mainPhoto from "../assets/mainPhoto.jpg";
 import SlidingContent from "./Sliding";
 import TiltContainer from "./TiltContainer";
@@ -34,6 +34,9 @@ const AboutMain = () => {
       y: cursorYpos,
     });
   }
+  useEffect(()=>{
+    document.title="About - Umesh"
+  },[])
   useGSAP(() => {
     const tl = gsap.timeline();
     tl.from(containerRef.current, {

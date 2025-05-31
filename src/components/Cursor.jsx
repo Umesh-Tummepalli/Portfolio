@@ -31,7 +31,7 @@ const Cursor = () => {
         <div
           key={index}
           ref={(el) => (circlesRef.current[index] = el)}
-          className={`w-6 h-6 z-50 rounded-full pointer-events-none fixed top-0 left-0  bg-white border-0 -translate-x-1/2 -translate-y-1/2 `}
+          className={`w-6 h-6 z-50 rounded-full pointer-events-none blur-[10px] fixed top-0 left-0  bg-white border-0 -translate-x-1/2 -translate-y-1/2 `}
         />
       ))}
     </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import LandingPage from './components/LandingPage'
 import {createBrowserRouter, RouterProvider} from "react-router-dom"  // Fixed import
 import NavBar from './components/NavBar'
@@ -7,6 +7,9 @@ import ProjectMain from './components/ProjectMain'
 import ScrollToTop from './app/ScrollToTop'
 
 const App = () => {
+  useEffect(()=>{
+    document.title="Projects - Umesh"
+  },[])
   const router = createBrowserRouter([
     {
       path: "/",
