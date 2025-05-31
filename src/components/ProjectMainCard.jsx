@@ -59,11 +59,11 @@ const ProjectMainCard = (props) => {
         onMouseLeave={handleMouseLeave}
         onMouseEnter={handleMouseEnter}
       >
-        <div className="text-3xl text-center text-white font-bold py-10  group border-b-1 border-white/20 -z-10 -translate-z-4 group overflow-hidden">
-          <p className="group-hover:opacity-0 lg:text-start translate-y-1/2 pl-8">
+        <div className="text-3xl text-center text-white font-bold py-10  group border-b-1 border-white/20  -translate-z-4 group overflow-hidden perspective-distant">
+        <div className="z-10 lg:group-hover:opacity-0 lg:text-start translate-y-1/2 pl-8">
             {props.title}
-          </p>
-          <div className={`pointer-events-none text-3xl  relative -translate-y-1/2 scale-y-0 duration-500 lg:group-[200%] lg:group-hover:scale-y-[200%]  h-full ${visibility&&"group-hover:scale-y-[200%]"}`}>
+        </div>
+          <div className={`pointer-events-none text-3xl bg-black md:bg-white/10 py-2 rounded-full backdrop-blur-[100px] border-1 border-white/20 backdrop-saturate-200  relative -translate-y-1/2 scale-y-0 duration-500  lg:group-hover:scale-y-[200%] z-20  h-full ${visibility&&"scale-y-[200%] lg:scale-y-0"}`}>
             <Sliding>
               <div className="flex">
                 <p>{props.title}</p>
@@ -88,7 +88,7 @@ const ProjectMainCard = (props) => {
           src={`/projectImg/${props.imageUrl}`}
           alt=""
           className="rounded absolute
-        top-0 left-0 -translate-x-1/2 scale-0 -translate-y- w-96 opacity-0  z-10 block translate-z-10 pointer-events-none"
+        top-0 left-0 -translate-x-1/2 scale-0 -translate-y- w-96 opacity-0  z-10 translate-z-10 pointer-events-none hidden lg:block"
           ref={imgRef}
         />
       </section>

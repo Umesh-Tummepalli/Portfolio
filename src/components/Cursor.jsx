@@ -26,7 +26,7 @@ const Cursor = () => {
   }, []);
 
   return (
-    <div className="relative top-0 left-0 pointer-events-none bg-white">
+    <div className="relative top-0 left-0 pointer-events-none bg-white hidden lg:block">
       {new Array(15).fill(0).map((_, index) => (
         <div
           key={index}
