@@ -49,7 +49,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className="w-full flex p-10 items-center justify-between flex-col md:flex-row">
+      <div className="sm:w-full w-[95vw] flex p-10 items-center justify-between flex-col md:flex-row">
         <div className="text-[9.3vw] font-[1000] m-0 leading-[0.8]">
           <h1 ref={(el) => (titleRef.current[0] = el)}>
             <Name text={"HI, I'm Umesh"} />

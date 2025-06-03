@@ -60,7 +60,7 @@ const ProjectMainCard = (props) => {
         onMouseEnter={handleMouseEnter}
       >
         <div className="text-3xl text-center text-white font-bold py-10  group border-b-1 border-white/20  -translate-z-4 group overflow-hidden perspective-distant p-0">
-        <div className="z-10 lg:group-hover:opacity-0 lg:text-start translate-y-1/2 pl-8">
+        <div className="z-10 lg:group-hover:opacity-0 lg:text-start translate-y-1/2 px-2 sm:pl-8 text-center duration-150">
             {props.title}
         </div>
           <div className={`pointer-events-none text-3xl bg-black md:bg-white/10 py-2 rounded-full backdrop-blur-[100px] border-1 border-white/20 backdrop-saturate-200  relative -translate-y-1/2 scale-y-0 duration-500  lg:group-hover:scale-y-[200%] z-20  h-full ${visibility&&"scale-y-[200%] lg:scale-y-0"}`}>
