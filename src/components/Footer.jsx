@@ -141,7 +141,7 @@ const Footer = () => {
       style={{ backgroundSize: "200% 200%" }}
     >
       {/* Particles */}
-      <div ref={particlesRef} className="absolute inset-0 pointer-events-none z-0" />
+      <div ref={particlesRef} className="absolute inset-0 pointer-events-none z-0 " />
 
       {/* Glow Decorations - Mobile friendly */}
       <div className="absolute top-2 left-2 w-12 h-12 sm:top-4 sm:left-4 sm:w-20 sm:h-20 bg-gradient-to-br from-gray-400 to-gray-700 rounded-full opacity-10 animate-pulse" />
@@ -149,10 +149,10 @@ const Footer = () => {
       <div className="absolute top-1/2 left-4 w-8 h-8 sm:left-8 sm:w-12 sm:h-12 bg-gradient-to-br from-gray-500 to-gray-700 rounded-full opacity-10 animate-pulse" />
 
       {/* Main Content */}
-      <div className="relative px-4 w-full max-w-4xl">
+      <div className="relative px-4 w-full max-w-4xl ">
         <h2
           ref={titleRef}
-          className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-4 sm:mb-8 leading-tight tracking-wide"
+          className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-4 sm:mb-8 leading-tight tracking-wide space-x-3"
           style={{
             perspective: "1000px",
             fontFamily: "'Bebas Neue', sans-serif",

@@ -73,7 +73,7 @@ const AboutMain = () => {
             className="w-full lg:w-1/2 p-5 overflow-hidden"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
-            <h2 className="text-4xl font-bold border-b-1 pb-4 " ref={headingRef}>
+            <h2 className="text-4xl font-bold border-b-1  " ref={headingRef}>
               About Me
             </h2>
             <div className="overflow-hidden">
@@ -141,8 +141,8 @@ const AboutMain = () => {
                 </p>
               </section>
             </div>
-            <a target="_blank" href={Resume} className="lg:text-end block mt-3 text- ">
-              <Button classes="">Download My Resume</Button>
+            <a target="_blank" href={Resume} className="lg:text-end block   mt-9  w-full text-center">
+              <Button classes="text-wrap px-5">Download My Resume</Button>
             </a>
           </section>
           <div className="lg:w-1/2 overflow-hidden">
