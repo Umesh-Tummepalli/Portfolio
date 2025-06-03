@@ -14,7 +14,7 @@ const ProjectShowcase = ({
   additionalLinks = [],
 }) => {
   return (
-    <div className="max-w-2xl  w-full lg:m-10 rounded-2xl shadow-xl overflow-hidden z-30 bg-white/10 backdrop-blur-md border border-white/20 scale">
+    <div className=" w-full mx-auto lg:m-10 rounded-2xl shadow-xl overflow-hidden z-30 bg-white/10 backdrop-blur-md border border-white/20">
       {/* Browser Header */}
       <div className="bg-black/70 px-4 py-3 flex items-center gap-2 border-b border-white/10">
         <div className="flex gap-2">
@@ -22,26 +22,26 @@ const ProjectShowcase = ({
           <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
           <div className="w-3 h-3 bg-green-500 rounded-full"></div>
         </div>
-        <div className="flex-1 mx-4">
-          <div className="bg-gray-700/60 rounded px-3 py-1 text-gray-200 text-sm font-mono">
+        <div className="flex-1 mx-4 overflow-hidden">
+          <div className="bg-gray-700/60 rounded px-3 py-1 text-gray-200 text-sm font-mono truncate">
             {liveUrl || "localhost:3000"}
           </div>
         </div>
       </div>
 
       {/* Project Preview */}
-      <div className="bg-transparent ">
-        <div className="rounded-lg overflow-hidden border border-white/10 ">
+      <div className="bg-transparent">
+        <div className="rounded-lg overflow-hidden border border-white/10">
           <img
             src={`/projectImg/${imageUrl || 'placeholder.svg'}`}
             alt={`${title} preview`}
-            className="w-full h-64   xl: object-cover m-auto"
+            className="w-full h-64 object-cover m-auto"
           />
         </div>
       </div>
 
       {/* Project Information */}
-      <div className=" xl:px-8 py-4 space-y-6 text-white px-4">
+      <div className="px-4 lg:px-8 py-4 space-y-6 text-white">
         {/* Header Section */}
         <div className="">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -57,22 +57,22 @@ const ProjectShowcase = ({
               <div className="flex flex-wrap gap-2">
                 {liveUrl && (
                   <Button classes="text-white bg-white/10 hover:bg-white/20 border border-white/20">
-                    <a href={liveUrl} target="_blank" rel="noopener noreferrer">
-                      Live Demo <i className="ri-arrow-right-up-box-line"></i>
+                    <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+                      Live Demo <ExternalLink className="w-4 h-4" />
                     </a>
                   </Button>
                 )}
                 {githubUrl && (
                   <Button classes="text-white bg-white/10 hover:bg-white/20 border border-white/20">
-                    <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-                      <i className="ri-github-fill"></i> Code
+                    <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+                      <Github className="w-4 h-4" /> Code
                     </a>
                   </Button>
                 )}
                 {additionalLinks.map((link, index) => (
                   <Button key={index} classes="text-white bg-white/10 hover:bg-white/20 border border-white/20">
-                    <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center">
-                      {link.icon && <span className="w-4 h-4 mr-2">{link.icon}</span>}
+                    <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+                      {link.icon && <span className="w-4 h-4">{link.icon}</span>}
                       {link.label}
                     </a>
                   </Button>
@@ -90,13 +90,16 @@ const ProjectShowcase = ({
         )}
 
         {technologies.length > 0 && (
-          <div className="space-x-1 space-y-2">
+          <div className="space-y-2">
             <h2 className="text-lg font-semibold text-white">Technologies Used</h2>
             <div className="flex flex-wrap gap-2">
               {technologies.map((tech, index) => (
-                <button key={index} className="text-white bg-white/10 text-sm border border-white/20 hover:bg-white/20 px-3 py-2 rounded">
+                <span 
+                  key={index} 
+                  className="text-white bg-white/10 text-sm border border-white/20 px-3 py-1.5 rounded"
+                >
                   {tech}
-                </button>
+                </span>
               ))}
             </div>
           </div>
@@ -107,8 +110,8 @@ const ProjectShowcase = ({
             <h2 className="text-lg font-semibold text-white">Key Features</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-center gap-2 text-white/80">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                <div key={index} className="flex items-start gap-2 text-white/80">
+                  <div className="mt-1.5 w-2 h-2 bg-white rounded-full flex-shrink-0"></div>
                   <span>{feature}</span>
                 </div>
               ))}

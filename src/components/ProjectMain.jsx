@@ -20,14 +20,15 @@ const ProjectMain = () => {
     const tl = gsap.timeline();
     tl.from(headingRef.current, {
       y: "-150%",
+      scale:0,
       duration: 1,
       ease: "back.out",
     });
     tl.from(cardRef.current, {
-      y: 1000,
+      x: "-150%",
       stagger: 0.2,
       ease: "back.out",
-      duration: 2,
+      duration: 1,
     });
   });
 
@@ -83,7 +84,7 @@ const ProjectMain = () => {
         </p>
       </div>
 
-      <section className="p-5 m-5 rounded-3xl bg-white/10 backdrop-blur-2xl backdrop-saturate-150 border-1 border-white/20">
+      <section className="m-1 mt-5 sm:m-5 rounded-3xl bg-white/10 backdrop-blur-2xl backdrop-saturate-150 border-1 border-white/20">
         {projData.map((item, index) => (
           <div
             key={index}
@@ -106,10 +107,10 @@ const ProjectMain = () => {
       {/* Project Card for large screens only */}
       <div className="hidden lg:block">
         {projInfo[1] && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none -translate-x-1/2 -translate-y-1/2">
+          <div className="">
             <div
               ref={globalCardRef}
-              className="pointer-events-auto"
+              className="pointer-events-auto fixed inset-0 z-50 flex items-center justify-center  -translate-x-1/2 -translate-y-1/2 w-[50vw]"
               onClick={() => setprojInfo([{}, false])}
             >
               <ProjectCard

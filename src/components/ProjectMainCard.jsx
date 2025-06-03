@@ -59,7 +59,7 @@ const ProjectMainCard = (props) => {
         onMouseLeave={handleMouseLeave}
         onMouseEnter={handleMouseEnter}
       >
-        <div className="text-3xl text-center text-white font-bold py-10  group border-b-1 border-white/20  -translate-z-4 group overflow-hidden perspective-distant">
+        <div className="text-3xl text-center text-white font-bold py-10  group border-b-1 border-white/20  -translate-z-4 group overflow-hidden perspective-distant p-0">
         <div className="z-10 lg:group-hover:opacity-0 lg:text-start translate-y-1/2 pl-8">
             {props.title}
         </div>
@@ -93,7 +93,7 @@ const ProjectMainCard = (props) => {
         />
       </section>
       <div
-        className={`overflow-hidden duration-500 transition-all ease-in-out lg:hidden ${
+        className={`overflow-hidden duration-500 transition-all ease-in-out lg:hidden w-full sm:w-[70vw] lg:w-[40vw]  ${
           visibility
             ? "translate-x-0 max-h-[1000px]"
             : "translate-x-full max-h-0"

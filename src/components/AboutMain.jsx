@@ -1,4 +1,4 @@
-import React, { useRef,useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import mainPhoto from "../assets/mainPhoto.jpg";
 import SlidingContent from "./Sliding";
 import TiltContainer from "./TiltContainer";
@@ -21,8 +21,8 @@ const AboutMain = () => {
   const moveElRef = useRef();
   const containerRef = useRef();
   const imgRef = useRef();
-  const headingRef = useRef(); 
-  const pref = useRef(); 
+  const headingRef = useRef();
+  const pref = useRef();
   function handleMouseMove(el) {
     let xpos = el.clientX;
     let ypos = el.clientY;
@@ -34,9 +34,9 @@ const AboutMain = () => {
       y: cursorYpos,
     });
   }
-  useEffect(()=>{
-    document.title="About - Umesh"
-  },[])
+  useEffect(() => {
+    document.title = "About - Umesh";
+  }, []);
   useGSAP(() => {
     const tl = gsap.timeline();
     tl.from(containerRef.current, {
@@ -47,25 +47,25 @@ const AboutMain = () => {
     });
     tl.from(imgRef.current, {
       x: "-100%",
-      ease:"back.out",
+      ease: "back.out",
     });
     tl.from(headingRef.current, {
       x: "200%",
-      ease:"back.out"
+      ease: "back.out",
     });
-    tl.from(pref.current,{
-      y:"-110%",
-      filter:"blur(20px)",
-      opacity:0,
-      duration:1.5,
-      ease:"back.out"
-    })
+    tl.from(pref.current, {
+      y: "-110%",
+      filter: "blur(20px)",
+      opacity: 0,
+      duration: 1.5,
+      ease: "back.out",
+    });
   });
   return (
     <div className="text-white p-4" id="aboutMain">
-      <TiltContainer >
+      <TiltContainer>
         <section
-          className="lg:m-10 flex flex-col lg:flex-row backdrop-blur-[10px] backdrop-saturate-150 z-10 bg-white/10 border border-white/20 rounded-3xl shadow-xl relative overflow-hidden "
+          className="lg:m-10 flex flex-col  lg:flex-row backdrop-blur-[10px] backdrop-saturate-150 z-10 bg-white/10 border border-white/20 rounded-3xl shadow-xl relative overflow-hidden "
           onMouseMove={handleMouseMove}
           ref={containerRef}
         >
@@ -77,76 +77,70 @@ const AboutMain = () => {
               About Me
             </h2>
             <div className="overflow-hidden">
-            <section className="space-y-2  pt-4 aboutPara" ref={pref}>
-            <p >
-              Hi, I'm{" "}
-              <span className="text-teal-400 font-semibold">
-                Umesh Tummepalli
-              </span>{" "}
-              — a passionate{" "}
-              <span className="text-teal-400">Front-End Developer</span> and
-              Computer Science undergrad specializing in{" "}
-              <span className="text-teal-400">Cyber Security</span> at{" "}
-              <span className="text-teal-400">SRM University</span>. I thrive at
-              the intersection of design, code, and problem-solving, building
-              web applications that are not just functional, but intuitive and
-              enjoyable to use.
-            </p>
-            <p>
-              With hands-on experience in{" "}
-              <span className="text-teal-400">
-                HTML, CSS, JavaScript, React
-              </span>
-              , and <span className="text-teal-400">Tailwind CSS</span>, I’ve
-              built everything from responsive portfolio sites and recipe search
-              apps to intelligent games like{" "}
-              <span className="text-teal-400">
-                Tic Tac Toe powered by the Minimax algorithm
-              </span>
-              . I'm also the developer behind a{" "}
-              <span className="text-teal-400">Virtual Study Environment</span>,
-              a full-stack task management system built to boost productivity.
-            </p>
-            <p>
-              Beyond front-end, I'm actively grinding{" "}
-              <span className="text-teal-400">
-                Data Structures & Algorithms (DSA)
-              </span>{" "}
-              and have completed{" "}
-              <span className="text-teal-400">150+ problems on LeetCode</span>,
-              steadily improving my coding efficiency and logical thinking. I’m
-              also expanding into back-end development, currently diving into{" "}
-              <span className="text-teal-400">Node.js</span> and{" "}
-              <span className="text-teal-400">MongoDB</span>, aiming to become a
-              proficient{" "}
-              <span className="text-teal-400">full-stack developer</span>.
-            </p>
-            <p>
-              Whether it’s implementing{" "}
-              <span className="text-teal-400">
-                AI chatbots using the Mistral API
-              </span>
-              , experimenting with{" "}
-              <span className="text-teal-400">GSAP animations</span>, or
-              optimizing asset delivery for faster performance, I love turning
-              ideas into polished digital experiences. I'm well-versed with
-              tools like <span className="text-teal-400">Git/GitHub</span>, and
-              comfortable working across{" "}
-              <span className="text-teal-400">Linux</span> and{" "}
-              <span className="text-teal-400">Windows</span> environments.
-            </p>
-            <p>
-              <span className="text-teal-400 font-semibold">Curious</span> by
-              nature and{" "}
-              <span className="text-teal-400 font-semibold">
-                driven by results
-              </span>
-              , I’m always exploring, building, breaking, and rebuilding —
-              sharpening both my development skills and my problem-solving
-              mindset along the way.
-            </p>
-          </section>
-          </div>
+              <section className="space-y-2  pt-4 aboutPara" ref={pref}>
+                <p>
+                  Hi, I'm{" "}
+                  <span className="text-teal-400  sm:whitespace-nowrap font-semibold">
+                    Umesh Tummepalli
+                  </span>{" "}
+                  — a passionate{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap ">Front-End Developer</span> and
+                  Computer Science undergrad specializing in{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">Cyber Security</span> at{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">SRM University</span>. I build
+                  intuitive and enjoyable web applications.
+                </p>
+                <p>
+                  With hands-on experience in{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">
+                    HTML, CSS, JavaScript, React
+                  </span>
+                  , and <span className="text-teal-400 sm:whitespace-nowrap">Tailwind CSS</span>, I’ve
+                  developed projects like a responsive portfolio, recipe search
+                  apps, and an intelligent{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">
+                    Tic Tac Toe powered by the Minimax algorithm
+                  </span>
+                  . I also created a{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">Virtual Study Environment</span>,
+                  a full-stack task management system.
+                </p>
+                <p>
+                  Beyond front-end, I actively practice{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">
+                    Data Structures & Algorithms (DSA)
+                  </span>{" "}
+                  with over{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">150+ LeetCode problems</span>{" "}
+                  solved. I'm expanding my skills into back-end development with{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">Node.js</span> and{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">MongoDB</span>, aiming to become
+                  a proficient <span className="text-teal-400 sm:whitespace-nowrap">full-stack developer</span>.
+                </p>
+                <p>
+                  I love turning ideas into polished digital experiences, whether
+                  it's implementing{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">
+                    AI chatbots using the Mistral API
+                  </span>
+                  , experimenting with{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">GSAP animations</span>, or
+                  optimizing performance. I'm proficient with{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">Git/GitHub</span> and comfortable
+                  across <span className="text-teal-400 sm:whitespace-nowrap">Linux</span> and{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">Windows</span> environments.
+                </p>
+                <p>
+                  <span className="text-teal-400 sm:whitespace-nowrap font-semibold">Curious</span> by
+                  nature and{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap font-semibold">
+                    driven by results
+                  </span>
+                  , I'm always exploring, building, and refining my development
+                  and problem-solving skills.
+                </p>
+              </section>
+            </div>
             <a target="_blank" href={Resume} className="lg:text-end block mt-3 text- ">
               <Button classes="">Download My Resume</Button>
             </a>
@@ -157,7 +151,7 @@ const AboutMain = () => {
               alt=""
               className="w-full  object-cover h-full"
               ref={imgRef}
-              />
+            />
           </div>
           <div
             className="absolute p-20 bg-green-500 rounded-full blur-3xl -z-10 -translate-x-1/2 -translate-y-1/2"

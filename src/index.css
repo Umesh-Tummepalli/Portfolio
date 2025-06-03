@@ -107,7 +107,7 @@ body{
   filter: saturate(50%);
   opacity: 0.6;
   z-index: 1; /* below the actual text */
-  border-radius: 10px;
+  border-radius: 5px;
   transform-origin: left;
   animation: fadein 1.5s ease-out 3s forwards;
   transform: scaleX(0);

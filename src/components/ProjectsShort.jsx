@@ -43,7 +43,7 @@ const ProjectsShort = () => {
         <h3 className="text-5xl p-8 text-center bg-white/10 border-1 border-white/20 backdrop-blur-2xl backdrop-saturate-150 mx-9 rounded-2xl"
           style={{ fontFamily: "'Bebas Neue', sans-serif" }}
         >What I've Built</h3>
-        <div className="PROJECTS overflow-hidden origin-top rotate-x-[-100deg]"
+        <div className="PROJECTS overflow-hidden origin-top sm:rotate-x-[-100deg]"
         ref={cardContainerRef}
         >
           {/* Scrolling Project Cards */}
@@ -51,7 +51,7 @@ const ProjectsShort = () => {
             {projData.slice(0, 3).map((item, index) => (
               <div
                 key={index}
-                className=" flex-shrink-0 w-[80vw] md:w-[60vw] lg:w-[40vw]"
+                className=" flex-shrink-0 w-[100vw] sm:w-[70vw] lg:w-[40vw]"
               >
                 <ProjectShowcase
                   title={item.name}
