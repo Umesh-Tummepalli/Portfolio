@@ -15,7 +15,9 @@ const ProjectMain = () => {
   const [projInfo, setprojInfo] = useState([{}, false]);
   const globalCardRef = useRef(null);
   const cursorPosition = useRef({ x: 0, y: 0 });
-
+useEffect(()=>{
+  document.title="Projects - Umesh"
+},[])
   useGSAP(() => {
     const tl = gsap.timeline();
     tl.from(headingRef.current, {

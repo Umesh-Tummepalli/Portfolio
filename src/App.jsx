@@ -8,7 +8,7 @@ import ScrollToTop from './app/ScrollToTop'
 
 const App = () => {
   useEffect(()=>{
-    document.title="Projects - Umesh"
+    document.title="Portfolio - Umesh"
   },[])
   const router = createBrowserRouter([
     {
