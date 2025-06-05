@@ -1,12 +1,78 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Umesh Tummepalli – Web Developer Portfolio
 
-Currently, two official plugins are available:
+A modern, responsive portfolio website showcasing my skills, projects, and experience as a front-end developer.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
 
-## Expanding the ESLint configuration
+👉 [umeshportfolio-beryl.vercel.app](https://umeshportfolio-beryl.vercel.app/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📸 Preview
+
+![Portfolio Screenshot](./image.png)
+*Home page of the portfolio*
+
+## 🛠️ Tech Stack
+
+* **Frontend:** React.js, HTML5, CSS3
+* **Deployment:** Vercel
+
+## 📁 Features
+
+* Responsive design compatible with all devices
+* Showcases personal projects with descriptions and links
+* Includes an "About Me" section detailing skills and experience
+* Clean and intuitive user interface
+
+## 🧰 Getting Started
+
+To run this project locally:
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/Umesh-Tummepalli/Portfolio.git
+   cd Portfolio
+   ```
+
+
+
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+
+
+3. **Start the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+
+
+4. **Open in browser:**
+
+   Navigate to `http://localhost:5173` to view the application.
+
+## 📦 Deployment
+
+The portfolio is deployed using [Vercel](https://vercel.com/).
+
+
+
+## 📚 Learnings
+
+* Enhanced proficiency in React.js .
+* Learned best practices for deploying applications with Vercel
+## 📬 Contact
+
+Feel free to reach out:
+
+* **Email:** [umeshtummepallioff3@gmail.com](mailto:your.umeshtummepallioff3@gmial.com)
+* **LinkedIn:** [https://www.linkedin.com/in/umesh-tummepalli-924362333/](https://www.linkedin.com/in/umesh-tummepalli-924362333/)
+* **GitHub:** [https://github.com/Umesh-Tummepalli](https://github.com/Umesh-Tummepalli)
+
+
