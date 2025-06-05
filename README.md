@@ -14,7 +14,7 @@ A modern, responsive portfolio website showcasing my skills, projects, and exper
 
 ## 🛠️ Tech Stack
 
-* **Frontend:** React.js, HTML5, CSS3
+* **Frontend:** React.js, HTML5, CSS3 , GSAP , TailwindCSS
 * **Deployment:** Vercel
 
 ## 📁 Features
