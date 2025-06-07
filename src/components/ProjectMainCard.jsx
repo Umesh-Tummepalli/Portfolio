@@ -51,10 +51,10 @@ const ProjectMainCard = (props) => {
   return (
     <>
       <section
-        className="group relative my-2.5 "
+        className="group relative my-2.5 perspective-distant"
         style={{ fontFamily: "Poppins" }}
         ref={containerRef}
-        onClick={() => setVisibility((prev) => !prev)}
+        onClick={() => {setVisibility((prev) => !prev)}}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onMouseEnter={handleMouseEnter}
@@ -93,10 +93,10 @@ const ProjectMainCard = (props) => {
         />
       </section>
       <div
-        className={`overflow-hidden duration-500 transition-all ease-in-out lg:hidden w-full sm:w-[70vw] lg:w-[40vw]  ${
+        className={`overflow-hidden duration-500 transition-all ease-in-out lg:hidden w-full sm:w-[70vw] lg:w-[40vw] origin-bottom-left  ${
           visibility
-            ? "translate-x-0 max-h-[1000px]"
-            : "translate-x-full max-h-0"
+            ? "opacity-100 max-h-[1000px] scale-100  blur-none translate-z-0"
+            : "opacity-0 max-h-0 scale-0  blur-2xl -translate-z-96 "
         }
           `}
       >
