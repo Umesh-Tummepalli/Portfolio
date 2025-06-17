@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef,useEffect} from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
@@ -13,9 +13,13 @@ const Name = ({text}) => {
     if (!letter) return;
     
     // Kill any existing animations on this letter
-    gsap.killTweensOf(letter);
-    
+   if (gsap.isTweening(letter)) {
+  return; // animation is already in progress, so exit
+}
+    squeezAnim(letter);
     // Create a timeline for smooth sequenced animation
+  });
+  function squeezAnim(letter){
     gsap.timeline()
       .to(letter, {
         scaleY: 0.6,
@@ -36,36 +40,36 @@ const Name = ({text}) => {
         duration: 0.5,
         ease: "elastic.out(2, 0.5)"
       });
-  });
+  }
   useGSAP(()=>{
     setTimeout(()=>{
-        // const tl2=gsap.timeline();
-    //     tl2.to(nameRef.current, {
-    //     scaleY: 0.6,
-    //     y: 10,
-    //     duration: 0.4,
-    //     ease: "power2.out",
-    // })
-    // .to(nameRef.current, {
-    //     transformOrigin: "center bottom",
-    //     y: -10,
-    //     scaleY: 1.4,
-    //     duration: 0.3,
-    //     ease: "back.out(1.7)",
-    // })
-    // .to(nameRef.current, {
-    //     scaleY: 1,
-    //     y: 0,
-    //     duration: 0.5,
-    //     ease: "elastic.out(2, 0.5)",
-    //     filter: 'blur(0)'
-    //   });
-      gsap.to(nameRef.current,{
+      gsap.timeline()
+      .to(nameRef.current,{
         filter:"blur(0px)",
         stagger:0.1,
-        duration:3,
-        opacity:1
+        duration:2.5,
+        opacity:1,
+        scale:1,
       })
+      .to(nameRef.current, {
+        scaleY: 0.6,
+        y: 10,
+        duration: 0.4,
+        ease: "power2.out"
+      })
+      .to(nameRef.current, {
+        transformOrigin: "center bottom",
+        y: -10,
+        scaleY: 1.4,
+        duration: 0.3,
+        ease: "back.out(1.7)"
+      })
+      .to(nameRef.current, {
+        scaleY: 1,
+        y: 0,
+        duration: 0.5,
+        ease: "elastic.out(2, 0.5)"
+      });
     },1550)
   },[])
   return (
@@ -73,7 +77,7 @@ const Name = ({text}) => {
         {text.split("").map((item, index) => (
           <pre 
             key={index}
-            className="inline-block hover:cursor-pointer will-change-transform px-1   shadow-black blur-[10px] opacity-0"
+            className="inline-block hover:cursor-pointer will-change-transform px-1  shadow-black blur-[10px] opacity-0 "
             ref={(el) => (nameRef.current[index] = el)}
             onMouseEnter={() => handleMouseEnter(index)}
           >

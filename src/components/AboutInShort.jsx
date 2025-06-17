@@ -75,7 +75,7 @@ const AboutInShort = () => {
         </div>
 
         {/* Tilt glass card */}
-        <TiltContainer className="z-20 flex justify-center w-full" tiltIntensity={30}>
+        <TiltContainer className="z-20 flex justify-center w-" tiltIntensity={30}>
           <div className="relative max-w-5xl w-full backdrop-blur-[10px] backdrop-saturate-150 bg-white/10 border border-white/20 rounded-3xl shadow-xl text-white px-6 py-10 sm:px-10 sm:py-14 text-base sm:text-lg md:text-xl leading-relaxed">
             <h2
               className="text-center text-3xl md:text-4xl font-bold mb-6"
