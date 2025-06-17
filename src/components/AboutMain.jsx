@@ -17,6 +17,7 @@ import { GrReactjs } from "react-icons/gr";
 import { SiTailwindcss } from "react-icons/si";
 import Resume from "../assets/Resume.pdf";
 import { useGSAP } from "@gsap/react";
+import HoverName from "./HoverName";
 const AboutMain = () => {
   const moveElRef = useRef();
   const containerRef = useRef();
@@ -84,26 +85,38 @@ const AboutMain = () => {
                     Umesh Tummepalli
                   </span>{" "}
                   — a passionate{" "}
-                  <span className="text-teal-400 sm:whitespace-nowrap ">Front-End Developer</span> and
-                  Computer Science undergrad specializing in{" "}
-                  <span className="text-teal-400 sm:whitespace-nowrap">Cyber Security</span> at{" "}
-                  <span className="text-teal-400 sm:whitespace-nowrap">SRM University</span>. I build
-                  intuitive and enjoyable web applications.
+                  <span className="text-teal-400 sm:whitespace-nowrap ">
+                    Front-End Developer
+                  </span>{" "}
+                  and Computer Science undergrad specializing in{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">
+                    Cyber Security
+                  </span>{" "}
+                  at{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">
+                    SRM University
+                  </span>
+                  . I build intuitive and enjoyable web applications.
                 </p>
                 <p>
                   With hands-on experience in{" "}
                   <span className="text-teal-400 sm:whitespace-nowrap">
                     HTML, CSS, JavaScript, React
                   </span>
-                  , and <span className="text-teal-400 sm:whitespace-nowrap">Tailwind CSS</span>, I’ve
-                  developed projects like a responsive portfolio, recipe search
-                  apps, and an intelligent{" "}
+                  , and{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">
+                    Tailwind CSS
+                  </span>
+                  , I’ve developed projects like a responsive portfolio, recipe
+                  search apps, and an intelligent{" "}
                   <span className="text-teal-400 sm:whitespace-nowrap">
                     Tic Tac Toe powered by the Minimax algorithm
                   </span>
                   . I also created a{" "}
-                  <span className="text-teal-400 sm:whitespace-nowrap">Virtual Study Environment</span>,
-                  a full-stack task management system.
+                  <span className="text-teal-400 sm:whitespace-nowrap">
+                    Virtual Study Environment
+                  </span>
+                  , a full-stack task management system.
                 </p>
                 <p>
                   Beyond front-end, I actively practice{" "}
@@ -111,28 +124,52 @@ const AboutMain = () => {
                     Data Structures & Algorithms (DSA)
                   </span>{" "}
                   with over{" "}
-                  <span className="text-teal-400 sm:whitespace-nowrap">150+ LeetCode problems</span>{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">
+                    150+ LeetCode problems
+                  </span>{" "}
                   solved. I'm expanding my skills into back-end development with{" "}
-                  <span className="text-teal-400 sm:whitespace-nowrap">Node.js</span> and{" "}
-                  <span className="text-teal-400 sm:whitespace-nowrap">MongoDB</span>, aiming to become
-                  a proficient <span className="text-teal-400 sm:whitespace-nowrap">full-stack developer</span>.
+                  <span className="text-teal-400 sm:whitespace-nowrap">
+                    Node.js
+                  </span>{" "}
+                  and{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">
+                    MongoDB
+                  </span>
+                  , aiming to become a proficient{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">
+                    full-stack developer
+                  </span>
+                  .
                 </p>
                 <p>
-                  I love turning ideas into polished digital experiences, whether
-                  it's implementing{" "}
+                  I love turning ideas into polished digital experiences,
+                  whether it's implementing{" "}
                   <span className="text-teal-400 sm:whitespace-nowrap">
                     AI chatbots using the Mistral API
                   </span>
                   , experimenting with{" "}
-                  <span className="text-teal-400 sm:whitespace-nowrap">GSAP animations</span>, or
-                  optimizing performance. I'm proficient with{" "}
-                  <span className="text-teal-400 sm:whitespace-nowrap">Git/GitHub</span> and comfortable
-                  across <span className="text-teal-400 sm:whitespace-nowrap">Linux</span> and{" "}
-                  <span className="text-teal-400 sm:whitespace-nowrap">Windows</span> environments.
+                  <span className="text-teal-400 sm:whitespace-nowrap">
+                    GSAP animations
+                  </span>
+                  , or optimizing performance. I'm proficient with{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">
+                    Git/GitHub
+                  </span>{" "}
+                  and comfortable across{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">
+                    Linux
+                  </span>{" "}
+                  and{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap">
+                    Windows
+                  </span>{" "}
+                  environments.
                 </p>
                 <p>
-                  <span className="text-teal-400 sm:whitespace-nowrap font-semibold">Curious</span> by
-                  nature and{" "}
+                  <span className="text-teal-400 sm:whitespace-nowrap font-semibold">
+                    Curious
+                  </span>{" "}
+                  by nature and{" "}
                   <span className="text-teal-400 sm:whitespace-nowrap font-semibold">
                     driven by results
                   </span>
@@ -141,7 +178,11 @@ const AboutMain = () => {
                 </p>
               </section>
             </div>
-            <a target="_blank" href={Resume} className="lg:text-end block   mt-9  w-full text-center">
+            <a
+              target="_blank"
+              href={Resume}
+              className="lg:text-end block   mt-9  w-full text-center"
+            >
               <Button classes="text-wrap px-5">Download My Resume</Button>
             </a>
           </section>
@@ -159,21 +200,44 @@ const AboutMain = () => {
           ></div>
         </section>
       </TiltContainer>
-      <section className="p-4 rounded-3xl backdrop-blur-3xl backdrop-saturate-150 bg-white/10 border-white/20 border-1 m-4 text-4xl">
-        <SlidingContent>
-          <GrReactjs />
-          <DiHtml5 />
-          <DiCss3 />
-          <DiJsBadge />
-          <SiTailwindcss />
-          <DiJava />
-          <DiNodejsSmall />
-          <FaLinux />
-          <SiC />
-          <SiCplusplus />
-          <SiExpress />
+      <section className="p-4 rounded-3xl backdrop-blur-3xl backdrop-saturate-150 bg-white/10 border-white/20 border-1 m-4 text-4xl ">
+        <SlidingContent pauseOnHover={false}>
+          <HoverName name="ReactJS">
+            <GrReactjs />
+          </HoverName>
+          <HoverName name="HTML5">
+            <DiHtml5 />
+          </HoverName>
+          <HoverName name="CSS3">
+            <DiCss3 />
+          </HoverName>
+          <HoverName name="JavaScript">
+            <DiJsBadge />
+          </HoverName>
+          <HoverName name="Tailwind CSS">
+            <SiTailwindcss />
+          </HoverName>
+          <HoverName name="Java">
+            <DiJava />
+          </HoverName>
+          <HoverName name="Node.js">
+            <DiNodejsSmall />
+          </HoverName>
+          <HoverName name="Linux">
+            <FaLinux />
+          </HoverName>
+          <HoverName name="C">
+            <SiC />
+          </HoverName>
+          <HoverName name="C++">
+            <SiCplusplus />
+          </HoverName>
+          <HoverName name="ExpressJS">
+            <SiExpress />
+          </HoverName>
         </SlidingContent>
       </section>
+
       <section className="flex md:flex-row md:justify-around flex-col justify-center items-center">
         <section
           className="p-4 rounded-2xl backdrop-blur-3xl backdrop-saturate-150 bg-white/10 border-white/20 border-1 m-4 w-fit flex justify-between items-center"
