@@ -1,95 +1,135 @@
-import React, { useRef, useEffect, useState } from "react"
+import React, { useRef, useEffect, useState } from "react";
 
 const SlidingContent = ({
   children,
   speed = 50,
   direction = "left",
   pauseOnHover = true,
+  onHoverEffect = true,
   gap = 32,
   className = "",
   style = {},
 }) => {
-  const containerRef = useRef(null)
-  const contentRef = useRef(null)
-  const [contentWidth, setContentWidth] = useState(0)
-  const [isPaused, setIsPaused] = useState(false)
+  const containerRef = useRef(null);
+  const contentRef = useRef(null);
+  const [cloneCount, setCloneCount] = useState(2);
+  const [isReady, setIsReady] = useState(false);
 
+  // Calculate needed clones and setup animation
   useEffect(() => {
-    if (!contentRef.current) return
+    if (!containerRef.current || !contentRef.current) return;
 
-    // Measure content width
-    const measureContent = () => {
-      if (contentRef.current) {
-        const width = contentRef.current.scrollWidth
-        setContentWidth(width)
-      }
+    const calculateClones = () => {
+      const container = containerRef.current;
+      const content = contentRef.current;
+
+      if (!container || !content) return;
+
+      const containerWidth = container.parentElement?.offsetWidth || 0;
+      const contentWidth = content.scrollWidth;
+
+      if (contentWidth === 0 || containerWidth === 0) return;
+
+      // Calculate how many clones we need to fill the viewport
+      const neededClones = Math.ceil((containerWidth * 2) / contentWidth);
+      setCloneCount(Math.max(2, neededClones));
+    };
+
+    const setupAnimation = () => {
+      const container = containerRef.current;
+      const content = contentRef.current;
+
+      if (!container || !content) return;
+
+      const contentWidth = content.scrollWidth;
+      const duration = contentWidth / speed;
+
+      container.style.setProperty("--slide-duration", `${duration}s`);
+      container.style.setProperty("--slide-gap", `${gap}px`);
+
+      setIsReady(true);
+    };
+
+    calculateClones();
+    setupAnimation();
+
+    const resizeObserver = new ResizeObserver(() => {
+      calculateClones();
+      setupAnimation();
+    });
+
+    if (containerRef.current?.parentElement) {
+      resizeObserver.observe(containerRef.current.parentElement);
     }
 
-    measureContent()
+    return () => resizeObserver.disconnect();
+  }, [children, speed, gap]);
 
-    // Remeasure on window resize
-    const handleResize = () => measureContent()
-    window.addEventListener("resize", handleResize)
+  // Pause on hover
 
-    return () => window.removeEventListener("resize", handleResize)
-  }, [children])
 
-  const duration = contentWidth > 0 ? contentWidth / speed : 0
-
-  const renderContent = () => {
-    return React.Children.map(children, (child, index) => (
-      <div key={index} className="flex-shrink-0" style={{ marginRight: `${gap}px` }}>
-        {child}
-      </div>
-    ))
-  }
+  const renderContentItems = (items, keyPrefix = "") => {
+    return React.Children.map(items, (child, index) => {
+      return (
+        <div
+          key={`${keyPrefix}${index}`}
+          className="flex-shrink-0"
+          style={{ marginRight: `${gap}px` }}
+        >
+          {child}
+        </div>
+      );
+    });
+  };
 
   return (
-    <div
-      className={`relative w-full overflow-x-hidden ${className}`}
-      style={style}
-      onMouseEnter={() => pauseOnHover && setIsPaused(true)}
-      onMouseLeave={() => pauseOnHover && setIsPaused(false)}
-    >
-      <div
-        ref={containerRef}
-        className="flex will-change-transform"
-        style={{
-          animation: duration > 0 ? `slide-${direction} ${duration}s linear infinite` : "none",
-          animationPlayState: isPaused ? "paused" : "running",
-        }}
-      >
-        {/* Original content */}
-        <div ref={contentRef} className="flex">
-          {renderContent()}
-        </div>
-
-        {/* Clone for seamless loop */}
-        <div className="flex">{renderContent()}</div>
-        <div className="flex">{renderContent()}</div>
-      </div>
-
+    <>
       <style jsx>{`
         @keyframes slide-left {
           0% {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-${contentWidth + gap}px);
+            transform: translateX(calc(-50% - var(--slide-gap) / 2));
           }
         }
-
-        @keyframes slide-right {
-          0% {
-            transform: translateX(-${contentWidth + gap}px);
-          }
-          100% {
-            transform: translateX(0);
-          }
+        .sliding-container {
+          display: flex;
+          animation: slide-left var(--slide-duration) linear infinite;
         }
       `}</style>
-    </div>
-  )
-}
 
-export default SlidingContent
+      <div
+        className={`relative w-full overflow-hidden ${className}`}
+        style={style}
+      >
+
+
+        {/* Scrolling content container */}
+        <div
+          ref={containerRef}
+          className="sliding-container whitespace-nowrap will-change-transform"
+        >
+          {/* Original content */}
+          <div ref={contentRef} className="flex">
+            {renderContentItems(children, "original-")}
+          </div>
+
+          {/* Cloned content */}
+          {[...Array(cloneCount)].map((_, i) => (
+            <div key={`clone-${i}`} className="flex">
+              {renderContentItems(children, `clone-${i}-`)}
+            </div>
+          ))}
+          {[...Array(cloneCount)].map((_, i) => (
+            <div key={`clone-${i}`} className="flex">
+              {renderContentItems(children, `clone-${i}-`)}
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default SlidingContent;

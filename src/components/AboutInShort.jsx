@@ -65,7 +65,7 @@ const AboutInShort = () => {
       <div className="flex items-center justify-center relative">
         {/* Sliding background */}
         <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full overflow-hidden pointer-events-none z-10 font-extrabold">
-          <SlidingText onHoverEffect={false} speed={100}>
+          <SlidingText onHoverEffect={false} speed={500}>
             <p className="text-9xl md:text-[25rem] opacity-10 whitespace-nowrap text-white uppercase"
               style={{ fontFamily: "'Bebas Neue', sans-serif" }}
             >

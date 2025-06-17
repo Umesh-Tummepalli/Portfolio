@@ -69,18 +69,6 @@ const ProjectMainCard = (props) => {
                 <p>{props.title}</p>
                 <i className="ri-arrow-right-up-line"></i>
               </div>
-              <div className="flex">
-                <p>{props.title}</p>
-                <i className="ri-arrow-right-up-line"></i>
-              </div>
-              <div className="flex">
-                <p>{props.title}</p>
-                <i className="ri-arrow-right-up-line"></i>
-              </div>
-              <div className="flex">
-                <p>{props.title}</p>
-                <i className="ri-arrow-right-up-line"></i>
-              </div>
             </Sliding>
           </div>
         </div>
