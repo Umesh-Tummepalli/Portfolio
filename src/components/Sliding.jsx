@@ -67,7 +67,6 @@ const SlidingContent = ({
 
   // Pause on hover
 
-
   const renderContentItems = (items, keyPrefix = "") => {
     return React.Children.map(items, (child, index) => {
       return (
@@ -87,24 +86,26 @@ const SlidingContent = ({
       <style jsx>{`
         @keyframes slide-left {
           0% {
-            transform: translateX(0);
+            transform: translate3d(0, 0, 0);
           }
           100% {
-            transform: translateX(calc(-50% - var(--slide-gap) / 2));
+            transform: translate3d(calc(-50% - var(--slide-gap) / 2), 0, 0);
           }
         }
         .sliding-container {
           display: flex;
           animation: slide-left var(--slide-duration) linear infinite;
+          will-change: transform;
+          backface-visibility: hidden;
+          transform-style: preserve-3d;
         }
-      `}</style>
+      `}
+      </style>
 
       <div
         className={`relative w-full overflow-hidden ${className}`}
         style={style}
       >
-
-
         {/* Scrolling content container */}
         <div
           ref={containerRef}
@@ -116,11 +117,6 @@ const SlidingContent = ({
           </div>
 
           {/* Cloned content */}
-          {[...Array(cloneCount)].map((_, i) => (
-            <div key={`clone-${i}`} className="flex">
-              {renderContentItems(children, `clone-${i}-`)}
-            </div>
-          ))}
           {[...Array(cloneCount)].map((_, i) => (
             <div key={`clone-${i}`} className="flex">
               {renderContentItems(children, `clone-${i}-`)}

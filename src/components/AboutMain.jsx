@@ -4,20 +4,13 @@ import SlidingContent from "./Sliding";
 import TiltContainer from "./TiltContainer";
 import gsap from "gsap";
 import Button from "./Button";
-import { FaLinux } from "react-icons/fa";
-import { SiC, SiCplusplus, SiExpress } from "react-icons/si";
-import {
-  DiHtml5,
-  DiCss3,
-  DiJsBadge,
-  DiJava,
-  DiNodejsSmall,
-} from "react-icons/di";
+
 import { GrReactjs } from "react-icons/gr";
 import { SiTailwindcss } from "react-icons/si";
 import Resume from "../assets/Resume.pdf";
 import { useGSAP } from "@gsap/react";
 import HoverName from "./HoverName";
+import SkillSlider from "./SkillSlider";
 const AboutMain = () => {
   const moveElRef = useRef();
   const containerRef = useRef();
@@ -200,106 +193,84 @@ const AboutMain = () => {
           ></div>
         </section>
       </TiltContainer>
-      <section className="p-4 rounded-3xl backdrop-blur-3xl backdrop-saturate-150 bg-white/10 border-white/20 border-1 m-4 text-4xl ">
-        <SlidingContent pauseOnHover={false}>
-          <HoverName name="ReactJS">
-            <GrReactjs />
-          </HoverName>
-          <HoverName name="HTML5">
-            <DiHtml5 />
-          </HoverName>
-          <HoverName name="CSS3">
-            <DiCss3 />
-          </HoverName>
-          <HoverName name="JavaScript">
-            <DiJsBadge />
-          </HoverName>
-          <HoverName name="Tailwind CSS">
-            <SiTailwindcss />
-          </HoverName>
-          <HoverName name="Java">
-            <DiJava />
-          </HoverName>
-          <HoverName name="Node.js">
-            <DiNodejsSmall />
-          </HoverName>
-          <HoverName name="Linux">
-            <FaLinux />
-          </HoverName>
-          <HoverName name="C">
-            <SiC />
-          </HoverName>
-          <HoverName name="C++">
-            <SiCplusplus />
-          </HoverName>
-          <HoverName name="ExpressJS">
-            <SiExpress />
-          </HoverName>
-        </SlidingContent>
-      </section>
+     <SkillSlider/>
+
 
       <section className="flex md:flex-row md:justify-around flex-col justify-center items-center">
-        <section
-          className="p-4 rounded-2xl backdrop-blur-3xl backdrop-saturate-150 bg-white/10 border-white/20 border-1 m-4 w-fit flex justify-between items-center"
-          style={{ fontFamily: "'Bebas Neue', sans-serif" }}
-        >
-          <p className="pr-4 border-r-1 text-3xl">Coding Profiles</p>
-          <a
-            target="_blank"
-            href="https://leetcode.com/u/umesh96/"
-            className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
-          >
-            Leetcode
-          </a>
-          <a
-            target="_blank"
-            href="https://www.geeksforgeeks.org/user/umeshtummu16z/"
-            className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
-          >
-            geeksforgeeks
-          </a>
-        </section>
-        <section
-          className="p-4 rounded-2xl backdrop-blur-3xl backdrop-saturate-150 bg-white/10 border-white/20 border-1 m-4 w-fit flex justify-between items-center"
-          style={{ fontFamily: "'Bebas Neue', sans-serif" }}
-        >
-          <p className="text-4xl">Let's Build Something Amazing Together.</p>
-        </section>
-        <section
-          className="p-4 rounded-2xl backdrop-blur-3xl backdrop-saturate-150 bg-white/10 border-white/20 border-1 m-4 w-fit flex justify-between items-center"
-          style={{ fontFamily: "'Bebas Neue', sans-serif" }}
-        >
-          <p className="pr-4 border-r-1 text-3xl">Iam Available On</p>
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/umesh-tummepalli-924362333/"
-            className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
-          >
-            <i className="ri-linkedin-fill"></i>
-          </a>
-          <a
-            target="_blank"
-            href="https://github.com/Umesh-Tummepalli"
-            className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
-          >
-            <i className="ri-github-line"></i>
-          </a>
-          <a
-            target="_blank"
-            href="https://www.instagram.com/umesh_tummepalli/"
-            className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
-          >
-            <i className="ri-instagram-line"></i>
-          </a>
-          <a
-            target="_blank"
-            href="mailto:umeshtummepallioff3@gmail.com"
-            className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
-          >
-            <i className="ri-mail-fill"></i>
-          </a>
-        </section>
-      </section>
+  <section
+    className="p-4 rounded-2xl backdrop-blur-3xl backdrop-saturate-150 bg-white/10 border-white/20 border-1 m-4 w-fit flex justify-between items-center"
+    style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+  >
+    <p className="pr-4 border-r-1 text-3xl">Coding Profiles</p>
+    <HoverName name="Leetcode">
+      <a
+        target="_blank"
+        href="https://leetcode.com/u/umesh96/"
+        className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
+      >
+        Leetcode
+      </a>
+    </HoverName>
+    <HoverName name="GeeksforGeeks">
+      <a
+        target="_blank"
+        href="https://www.geeksforgeeks.org/user/umeshtummu16z/"
+        className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
+      >
+        GeeksforGeeks
+      </a>
+    </HoverName>
+  </section>
+  <section
+    className="p-4 rounded-2xl backdrop-blur-3xl backdrop-saturate-150 bg-white/10 border-white/20 border-1 m-4 w-fit flex justify-between items-center"
+    style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+  >
+    <p className="text-4xl">Let's Build Something Amazing Together.</p>
+  </section>
+  <section
+    className="p-4 rounded-2xl backdrop-blur-3xl backdrop-saturate-150 bg-white/10 border-white/20 border-1 m-4 w-fit flex justify-between items-center"
+    style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+  >
+    <p className="pr-4 border-r-1 text-3xl">I am Available On</p>
+    <HoverName name="LinkedIn">
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/in/umesh-tummepalli-924362333/"
+        className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
+      >
+        <i className="ri-linkedin-fill"></i>
+      </a>
+    </HoverName>
+    <HoverName name="GitHub">
+      <a
+        target="_blank"
+        href="https://github.com/Umesh-Tummepalli"
+        className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
+      >
+        <i className="ri-github-line"></i>
+      </a>
+    </HoverName>
+    <HoverName name="Instagram">
+      <a
+        target="_blank"
+        href="https://www.instagram.com/umesh_tummepalli/"
+        className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
+      >
+        <i className="ri-instagram-line"></i>
+      </a>
+    </HoverName>
+    <HoverName name="Email">
+      <a
+        target="_blank"
+        href="mailto:umeshtummepallioff3@gmail.com"
+        className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
+      >
+        <i className="ri-mail-fill"></i>
+      </a>
+    </HoverName>
+  </section>
+</section>
+
     </div>
   );
 };
