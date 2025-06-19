@@ -4,7 +4,8 @@ const HoverName = ({
   children, 
   name, 
   delay = 100, 
-  tooltipClassName = '', 
+  tooltipClassName = '-translate-x-1/2', 
+  arrowClasses="left-1/2 -translate-x-1/2",
   ...props 
 }) => {
 
@@ -21,7 +22,7 @@ const HoverName = ({
           whitespace-nowrap pointer-events-none shadow-lg
           opacity-0 group-hover:opacity-100 scale-0 group-hover:scale-100
           transition-all duration-200 ease-[cubic-bezier(0.33,1,0.68,1)] font-medium
-          bottom-full left-1/2 -translate-x-1/2 mb-2
+          bottom-full left-1/2 mb-2 
           ${tooltipClassName}
         `}
         style={{ transitionDelay: `${delay}ms`, fontFamily:"'Poppins'" }}
@@ -29,7 +30,9 @@ const HoverName = ({
         {name}
         {/* Tooltip arrow */}
         <span 
-          className="absolute w-3 h-3 bg-white rotate-45 bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 -z-10"
+          className={`absolute w-3 h-3 bg-white rotate-45 bottom-0  translate-y-1/4 -z-10
+          ${arrowClasses}
+            `}
         />
       </span>
       

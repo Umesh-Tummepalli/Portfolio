@@ -42,8 +42,8 @@ const Links = () => {
 
     return (
         <div className="w-full md:w-1/2 ">
-            <div className="flex justify-around items-center w-full" ref={divRef}>
-                <HoverName name="LinkedIn">
+            <div className="flex justify-around items-center w-full " ref={divRef}>
+                <HoverName name="LinkedIn" arrowClasses="hidden">
                     <a
                         href="https://www.linkedin.com/in/umesh-tummepalli-924362333/"
                         target="_blank"
@@ -56,7 +56,7 @@ const Links = () => {
                     </a>
                 </HoverName>
                 <span className="h-0.5 w-1/6 md:w-1/4 bg-gray-500"></span>
-                <HoverName name="GitHub">
+                <HoverName name="GitHub" arrowClasses="hidden">
                     <a
                         href="https://github.com/Umesh-Tummepalli"
                         target="_blank"
@@ -69,7 +69,7 @@ const Links = () => {
                     </a>
                 </HoverName>
                 <span className="h-0.5 w-1/6 md:w-1/4 bg-gray-500"></span>
-                <HoverName name="Email">
+                <HoverName name="Email" arrowClasses="hidden">
                     <a href="mailto:umeshtummepallioff3@gmail.com" aria-label="Send email">
                         <Button classes="px-4 text-2xl">
                             <i className="ri-mail-fill"></i>
