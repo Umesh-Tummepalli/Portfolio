@@ -3,9 +3,6 @@ import React, { useRef, useEffect, useState } from "react";
 const SlidingContent = ({
   children,
   speed = 50,
-  direction = "left",
-  pauseOnHover = true,
-  onHoverEffect = true,
   gap = 32,
   className = "",
   style = {},
@@ -13,7 +10,6 @@ const SlidingContent = ({
   const containerRef = useRef(null);
   const contentRef = useRef(null);
   const [cloneCount, setCloneCount] = useState(2);
-  const [isReady, setIsReady] = useState(false);
 
   // Calculate needed clones and setup animation
   useEffect(() => {
@@ -47,7 +43,6 @@ const SlidingContent = ({
       container.style.setProperty("--slide-duration", `${duration}s`);
       container.style.setProperty("--slide-gap", `${gap}px`);
 
-      setIsReady(true);
     };
 
     calculateClones();
@@ -111,18 +106,13 @@ const SlidingContent = ({
           className="sliding-container whitespace-nowrap will-change-transform"
         >
           {/* Original content */}
-          <div ref={contentRef} className="flex">
+          <div ref={contentRef} className="flex innerSlider">
             {renderContentItems(children, "original-")}
           </div>
 
           {/* Cloned content */}
           {[...Array(cloneCount)].map((_, i) => (
-            <div key={`clone-${i}`} className="flex">
-              {renderContentItems(children, `clone-${i}-`)}
-            </div>
-          ))}
-          {[...Array(cloneCount)].map((_, i) => (
-            <div key={`clone-${i}`} className="flex">
+            <div key={`clone-${i}`} className="flex innerSlider">
               {renderContentItems(children, `clone-${i}-`)}
             </div>
           ))}

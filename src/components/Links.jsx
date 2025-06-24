@@ -44,7 +44,7 @@ const Links = () => {
   );
 
   return (
-    <div className="w-full md:w-1/2 overflow-hidden sm:overflow-auto">
+    <div className="w-full md:w-1/2 overflow-hidden ">
       <div className="flex justify-around items-center w-full" ref={divRef}>
           <a
             href="https://www.linkedin.com/in/umesh-tummepalli-924362333/"

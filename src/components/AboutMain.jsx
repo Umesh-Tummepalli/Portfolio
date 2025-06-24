@@ -201,52 +201,56 @@ const AboutMain = () => {
         </section>
       </TiltContainer>
       <section className="p-4 rounded-3xl backdrop-blur-3xl backdrop-saturate-150 bg-white/10 border-white/20 border-1 m-4 text-4xl">
-        <SlidingContent pauseOnHover={false}>
-          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
-            <GrReactjs />
-            <span className="text-xl">ReactJS</span>
-          </div>
-          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
-            <DiHtml5 />
-            <span className="text-xl">HTML5</span>
-          </div>
-          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
-            <DiCss3 />
-            <span className="text-xl">CSS3</span>
-          </div>
-          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
-            <DiJsBadge />
-            <span className="text-xl">JavaScript</span>
-          </div>
-          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
-            <SiTailwindcss />
-            <span className="text-xl">Tailwind CSS</span>
-          </div>
-          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
-            <DiJava />
-            <span className="text-xl">Java</span>
-          </div>
-          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
-            <DiNodejsSmall />
-            <span className="text-xl">Node.js</span>
-          </div>
-          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
-            <FaLinux />
-            <span className="text-xl">Linux</span>
-          </div>
-          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
-            <SiC />
-            <span className="text-xl">C</span>
-          </div>
-          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
-            <SiCplusplus />
-            <span className="text-xl">C++</span>
-          </div>
-          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
-            <SiExpress />
-            <span className="text-xl">ExpressJS</span>
-          </div>
-        </SlidingContent>
+        <SlidingContent pauseOnHover={false} speed={200}>
+  {/* Web Development Skills */}
+  <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30 hover:bg-white hover:text-black duration-300">
+    <GrReactjs />
+    <span className="text-xl">ReactJS</span>
+  </div>
+  <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30 hover:bg-white hover:text-black duration-300">
+    <DiHtml5 />
+    <span className="text-xl">HTML5</span>
+  </div>
+  <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30 hover:bg-white hover:text-black duration-300">
+    <DiCss3 />
+    <span className="text-xl">CSS3</span>
+  </div>
+  <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30 hover:bg-white hover:text-black duration-300">
+    <DiJsBadge />
+    <span className="text-xl">JavaScript</span>
+  </div>
+  <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30 hover:bg-white hover:text-black duration-300">
+    <SiTailwindcss />
+    <span className="text-xl">Tailwind CSS</span>
+  </div>
+  <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30 hover:bg-white hover:text-black duration-300">
+    <DiNodejsSmall />
+    <span className="text-xl">Node.js</span>
+  </div>
+  <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30 hover:bg-white hover:text-black duration-300">
+    <SiExpress />
+    <span className="text-xl">ExpressJS</span>
+  </div>
+
+  {/* Other Programming Languages and Skills */}
+  <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30 hover:bg-white hover:text-black duration-300">
+    <DiJava />
+    <span className="text-xl">Java</span>
+  </div>
+  <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30 hover:bg-white hover:text-black duration-300">
+    <SiC />
+    <span className="text-xl">C</span>
+  </div>
+  <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30 hover:bg-white hover:text-black duration-300">
+    <SiCplusplus />
+    <span className="text-xl">C++</span>
+  </div>
+  <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30 hover:bg-white hover:text-black duration-300">
+    <FaLinux />
+    <span className="text-xl">Linux</span>
+  </div>
+</SlidingContent>
+
       </section>
 
       <section className="flex md:flex-row md:justify-around flex-col justify-center items-center">
