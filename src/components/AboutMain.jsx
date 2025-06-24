@@ -200,41 +200,52 @@ const AboutMain = () => {
           ></div>
         </section>
       </TiltContainer>
-      <section className="p-4 rounded-3xl backdrop-blur-3xl backdrop-saturate-150 bg-white/10 border-white/20 border-1 m-4 text-4xl ">
+      <section className="p-4 rounded-3xl backdrop-blur-3xl backdrop-saturate-150 bg-white/10 border-white/20 border-1 m-4 text-4xl">
         <SlidingContent pauseOnHover={false}>
-          <HoverName name="ReactJS">
+          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
             <GrReactjs />
-          </HoverName>
-          <HoverName name="HTML5">
+            <span className="text-xl">ReactJS</span>
+          </div>
+          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
             <DiHtml5 />
-          </HoverName>
-          <HoverName name="CSS3">
+            <span className="text-xl">HTML5</span>
+          </div>
+          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
             <DiCss3 />
-          </HoverName>
-          <HoverName name="JavaScript">
+            <span className="text-xl">CSS3</span>
+          </div>
+          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
             <DiJsBadge />
-          </HoverName>
-          <HoverName name="Tailwind CSS">
+            <span className="text-xl">JavaScript</span>
+          </div>
+          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
             <SiTailwindcss />
-          </HoverName>
-          <HoverName name="Java">
+            <span className="text-xl">Tailwind CSS</span>
+          </div>
+          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
             <DiJava />
-          </HoverName>
-          <HoverName name="Node.js">
+            <span className="text-xl">Java</span>
+          </div>
+          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
             <DiNodejsSmall />
-          </HoverName>
-          <HoverName name="Linux">
+            <span className="text-xl">Node.js</span>
+          </div>
+          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
             <FaLinux />
-          </HoverName>
-          <HoverName name="C">
+            <span className="text-xl">Linux</span>
+          </div>
+          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
             <SiC />
-          </HoverName>
-          <HoverName name="C++">
+            <span className="text-xl">C</span>
+          </div>
+          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
             <SiCplusplus />
-          </HoverName>
-          <HoverName name="ExpressJS">
+            <span className="text-xl">C++</span>
+          </div>
+          <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30">
             <SiExpress />
-          </HoverName>
+            <span className="text-xl">ExpressJS</span>
+          </div>
         </SlidingContent>
       </section>
 
@@ -244,20 +255,24 @@ const AboutMain = () => {
           style={{ fontFamily: "'Bebas Neue', sans-serif" }}
         >
           <p className="pr-4 border-r-1 text-3xl">Coding Profiles</p>
-          <a
-            target="_blank"
-            href="https://leetcode.com/u/umesh96/"
-            className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
-          >
-            Leetcode
-          </a>
-          <a
-            target="_blank"
-            href="https://www.geeksforgeeks.org/user/umeshtummu16z/"
-            className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
-          >
-            geeksforgeeks
-          </a>
+          <HoverName name="Leetcode">
+            <a
+              target="_blank"
+              href="https://leetcode.com/u/umesh96/"
+              className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
+            >
+              Leetcode
+            </a>
+          </HoverName>
+          <HoverName name="Geeks for Geeks">
+            <a
+              target="_blank"
+              href="https://www.geeksforgeeks.org/user/umeshtummu16z/"
+              className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
+            >
+              geeksforgeeks
+            </a>
+          </HoverName>
         </section>
         <section
           className="p-4 rounded-2xl backdrop-blur-3xl backdrop-saturate-150 bg-white/10 border-white/20 border-1 m-4 w-fit flex justify-between items-center"
@@ -270,34 +285,42 @@ const AboutMain = () => {
           style={{ fontFamily: "'Bebas Neue', sans-serif" }}
         >
           <p className="pr-4 border-r-1 text-3xl">Iam Available On</p>
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/umesh-tummepalli-924362333/"
-            className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
-          >
-            <i className="ri-linkedin-fill"></i>
-          </a>
-          <a
-            target="_blank"
-            href="https://github.com/Umesh-Tummepalli"
-            className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
-          >
-            <i className="ri-github-line"></i>
-          </a>
-          <a
-            target="_blank"
-            href="https://www.instagram.com/umesh_tummepalli/"
-            className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
-          >
-            <i className="ri-instagram-line"></i>
-          </a>
-          <a
-            target="_blank"
-            href="mailto:umeshtummepallioff3@gmail.com"
-            className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
-          >
-            <i className="ri-mail-fill"></i>
-          </a>
+          <HoverName name="LinkedIn">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/umesh-tummepalli-924362333/"
+              className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
+            >
+              <i className="ri-linkedin-fill"></i>
+            </a>
+          </HoverName>
+          <HoverName name="GitHub">
+            <a
+              target="_blank"
+              href="https://github.com/Umesh-Tummepalli"
+              className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
+            >
+              <i className="ri-github-line"></i>
+            </a>
+          </HoverName>
+          <HoverName name="Instagram">
+            <a
+              target="_blank"
+              href="https://www.instagram.com/umesh_tummepalli/"
+              className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
+            >
+              <i className="ri-instagram-line"></i>
+            </a>
+          </HoverName>
+          <HoverName name="Email">
+            <a
+              target="_blank"
+              href="mailto:umeshtummepallioff3@gmail.com"
+              className="p-2 border-1 rounded-md border-white/50 hover:bg-amber-50 hover:text-black duration-300 mx-1"
+            >
+              <i className="ri-mail-fill"></i>
+            </a>
+          </HoverName>
         </section>
       </section>
     </div>

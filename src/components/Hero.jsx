@@ -49,8 +49,8 @@ const Hero = () => {
 
   return (
     <>
-      <div className="sm:w-full w-[95vw] flex p-10 items-center justify-between flex-col md:flex-row">
-        <div className="text-[9.3vw] font-[1000] m-0 leading-[0.8]">
+      <div className="sm:w-full w-[95vw]  flex p-10 items-center justify-between flex-col md:flex-row overflow-hidden">
+        <div className="text-[9.3vw] font-[1000] m-0 leading-[1] sm:leading-[0.8] text-center sm:text-start ">
           <h1 ref={(el) => (titleRef.current[0] = el)}>
             <Name text={"HI, I'm Umesh"} />
           </h1>

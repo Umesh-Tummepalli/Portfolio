@@ -8,14 +8,12 @@ const Cursor = () => {
   useEffect(() => {
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
-      circlesRef.current.forEach((circle, index) => {
-        gsap.to(circle, {
+        gsap.to(circlesRef.current, {
           x: clientX,
           y: clientY,
-          scale: (15 - index) / 15,
-          duration: index / 50,
+          duration:0.3,
+          ease:"power4.out"
         });
-      });
     };
 
     document.addEventListener("mousemove", handleMouseMove);
@@ -27,13 +25,10 @@ const Cursor = () => {
 
   return (
     <div className="relative top-0 left-0 pointer-events-none bg-white hidden lg:block">
-      {new Array(15).fill(0).map((_, index) => (
         <div
-          key={index}
-          ref={(el) => (circlesRef.current[index] = el)}
-          className={`w-6 h-6 z-50 rounded-full pointer-events-none blur-[10px] fixed top-0 left-0  bg-white border-0 -translate-x-1/2 -translate-y-1/2 `}
+          ref={circlesRef}
+          className={`w-6 h-6 z-50 rounded-full pointer-events-none  fixed top-0 left-0  bg-transparent backdrop-invert-100 border-0 -translate-x-1/2 -translate-y-1/2 `}
         />
-      ))}
     </div>
   );
 };
