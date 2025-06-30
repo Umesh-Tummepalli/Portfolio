@@ -7,7 +7,7 @@ import TiltImage from "./TiltImage";
 import Cube from "./Cube";
 import Button from "./Button";
 import Links from "./Links";
-
+import Resume from "../assets/Resume.pdf"
 // Register the plugin
 gsap.registerPlugin(useGSAP);
 
@@ -73,7 +73,10 @@ const Hero = () => {
             classes="rounded-4xl w-full h-auto bg-white p-4 shadow-xl "
             tiltIntensity={50}
           />
-        </div>
+          <a href={Resume} target="_blank">
+            <Button classes="w-full text-xl mt-5 font-[Poppins]">View My Resume</Button>
+          </a>
+          </div>
       </div>
       <Links />
     </>
