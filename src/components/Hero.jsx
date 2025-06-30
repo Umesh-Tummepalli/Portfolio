@@ -4,7 +4,6 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import mainImage from "../assets/Main-Scene.gif";
 import TiltImage from "./TiltImage";
-import Cube from "./Cube";
 import Button from "./Button";
 import Links from "./Links";
 import Resume from "../assets/Resume.pdf"
@@ -48,38 +47,39 @@ const Hero = () => {
   }, []);
 
   return (
-    <>
-      <div className="sm:w-full w-[95vw]  flex p-10 items-center justify-between flex-col md:flex-row overflow-hidden">
-        <div className="text-[9.3vw] font-[1000] m-0 leading-[1] sm:leading-[0.8] text-center sm:text-start ">
-          <h1 ref={(el) => (titleRef.current[0] = el)}>
+    <main> {/* Wrapped in main landmark for better document structure */}
+      <section className="sm:w-full w-[95vw] flex p-10 items-center justify-between flex-col md:flex-row overflow-hidden">
+        <header className="text-[9.3vw] font-[1000] m-0 leading-[1] sm:leading-[0.8] text-center sm:text-start"> {/* Changed to header */}
+          <h1 ref={(el) => (titleRef.current[0] = el)} aria-label="Introduction">
             <Name text={"HI, I'm Umesh"} />
           </h1>
-          <div>
+          <div role="contentinfo" aria-label="Professional titles"> {/* Added ARIA attributes */}
             {titles.map((title, index) => (
-              <p key={index} ref={(el) => (titleRef.current[index + 1] = el)}>
+              <h2 key={index} ref={(el) => (titleRef.current[index + 1] = el)}> {/* Changed to h2 for proper heading hierarchy */}
                 <Name text={title} />
-              </p>
+              </h2>
             ))}
           </div>
-        </div>
+        </header>
 
-        <div
-          ref={imgContainerRef}
-          className="md:w-[40vw] md:max-w-[600px] perspective-1000 w-full mt-8"
-        >
-          <TiltImage
-            src={mainImage}
-            alt="Main illustration"
-            classes="rounded-4xl w-full h-auto bg-white p-4 shadow-xl "
-            tiltIntensity={50}
-          />
-          <a href={Resume} target="_blank">
+        <aside ref={imgContainerRef} className="md:w-[40vw] md:max-w-[600px] perspective-1000 w-full mt-8"> {/* Changed to aside */}
+          <figure> {/* Wrapped image in figure */}
+            <TiltImage
+              src={mainImage}
+              alt="Umesh's professional illustration showcasing web development skills"
+              classes="rounded-4xl w-full h-auto bg-white p-4 shadow-xl"
+              tiltIntensity={50}
+            />
+          </figure>
+          <a href={Resume} target="_blank" rel="noopener noreferrer" aria-label="Download Umesh's resume">
             <Button classes="w-full text-xl mt-5 font-[Poppins]">View My Resume</Button>
           </a>
-          </div>
-      </div>
-      <Links />
-    </>
+        </aside>
+      </section>
+      <nav aria-label="Social media links"> {/* Added nav with ARIA label */}
+        <Links />
+      </nav>
+    </main>
   );
 };
 

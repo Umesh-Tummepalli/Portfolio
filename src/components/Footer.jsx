@@ -30,6 +30,7 @@ const Footer = () => {
       for (let i = 0; i < count; i++) {
         const particle = document.createElement("div");
         particle.className = "particle absolute w-1 h-1 sm:w-2 sm:h-2 bg-white rounded-full";
+        particle.setAttribute("aria-hidden", "true");
         particles.appendChild(particle);
 
         gsap.set(particle, {
@@ -137,21 +138,37 @@ const Footer = () => {
     <footer
       ref={footerRef}
       className="relative text-center py-12 px-4 sm:py-16 sm:px-6 lg:px-12 m-2 sm:mx-4 lg:mx-8 my-8 sm:my-12 rounded-3xl overflow-hidden shadow-lg sm:shadow-2xl 
-        bg-white/10 text-white border border-gray-800 backdrop-blur-md backdrop-saturate-150 flex justify-center items-center flex-col "
+        bg-white/10 text-white border border-gray-800 backdrop-blur-md backdrop-saturate-150 flex justify-center items-center flex-col"
       style={{ backgroundSize: "200% 200%" }}
+      aria-labelledby="footer-heading"
+      role="contentinfo"
     >
       {/* Particles */}
-      <div ref={particlesRef} className="absolute inset-0 pointer-events-none z-0 " />
+      <div 
+        ref={particlesRef} 
+        className="absolute inset-0 pointer-events-none z-0" 
+        aria-hidden="true"
+      />
 
       {/* Glow Decorations - Mobile friendly */}
-      <div className="absolute top-2 left-2 w-12 h-12 sm:top-4 sm:left-4 sm:w-20 sm:h-20 bg-gradient-to-br from-gray-400 to-gray-700 rounded-full opacity-10 animate-pulse" />
-      <div className="absolute bottom-2 right-2 w-10 h-10 sm:bottom-4 sm:right-4 sm:w-16 sm:h-16 bg-gradient-to-br from-gray-700 to-gray-400 rounded-full opacity-10 animate-pulse" />
-      <div className="absolute top-1/2 left-4 w-8 h-8 sm:left-8 sm:w-12 sm:h-12 bg-gradient-to-br from-gray-500 to-gray-700 rounded-full opacity-10 animate-pulse" />
+      <div 
+        className="absolute top-2 left-2 w-12 h-12 sm:top-4 sm:left-4 sm:w-20 sm:h-20 bg-gradient-to-br from-gray-400 to-gray-700 rounded-full opacity-10 animate-pulse" 
+        aria-hidden="true"
+      />
+      <div 
+        className="absolute bottom-2 right-2 w-10 h-10 sm:bottom-4 sm:right-4 sm:w-16 sm:h-16 bg-gradient-to-br from-gray-700 to-gray-400 rounded-full opacity-10 animate-pulse" 
+        aria-hidden="true"
+      />
+      <div 
+        className="absolute top-1/2 left-4 w-8 h-8 sm:left-8 sm:w-12 sm:h-12 bg-gradient-to-br from-gray-500 to-gray-700 rounded-full opacity-10 animate-pulse" 
+        aria-hidden="true"
+      />
 
       {/* Main Content */}
-      <div className="relative px-4 w-full max-w-4xl ">
+      <div className="relative px-4 w-full max-w-4xl">
         <h2
           ref={titleRef}
+          id="footer-heading"
           className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-4 sm:mb-8 leading-tight tracking-wide space-x-3"
           style={{
             perspective: "1000px",
@@ -168,24 +185,35 @@ const Footer = () => {
               textShadow: "0 0 10px rgba(255, 255, 255, 0.2)",
               letterSpacing: "2px",
             }}
+            aria-label="big thing"
           >
             BIG-THING
-            <span className="absolute inset-0 bg-gradient-to-r from-white to-gray-400 opacity-10 blur-lg -z-10" />
+            <span 
+              className="absolute inset-0 bg-gradient-to-r from-white to-gray-400 opacity-10 blur-lg -z-10" 
+              aria-hidden="true"
+            />
           </span>{" "}
           together
         </h2>
 
         <div className="w-full h-full mx-auto my-6 text-white flex justify-center">
-          <Logo className="w-full h-full max-w-[500px] max-h-[500px]" />
+          <Logo className="w-full h-full max-w-[500px] max-h-[500px]" aria-label="Company logo" />
         </div>
 
-        <div ref={linksRef} className="flex justify-center flex-wrap mt-4 sm:mt-8 gap-3 sm:gap-4">
+        <div 
+          ref={linksRef} 
+          className="flex justify-center flex-wrap mt-4 sm:mt-8 gap-3 sm:gap-4"
+          aria-label="Social media links"
+        >
           <Links />
         </div>
       </div>
 
       {/* Line Glow */}
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-px sm:h-1 bg-gradient-to-r from-transparent via-white to-transparent opacity-20 sm:opacity-30 blur-sm" />
+      <div 
+        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-px sm:h-1 bg-gradient-to-r from-transparent via-white to-transparent opacity-20 sm:opacity-30 blur-sm" 
+        aria-hidden="true"
+      />
     </footer>
   );
 };
