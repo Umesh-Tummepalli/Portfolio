@@ -7,6 +7,7 @@ import TiltImage from "./TiltImage";
 import Button from "./Button";
 import Links from "./Links";
 import Resume from "../assets/Resume.pdf"
+import { ResumeLink } from "../app/Links";
 // Register the plugin
 gsap.registerPlugin(useGSAP);
 
@@ -71,7 +72,7 @@ const Hero = () => {
               tiltIntensity={50}
             />
           </figure>
-          <a href={Resume} target="_blank" rel="noopener noreferrer" aria-label="Download Umesh's resume">
+          <a href={ResumeLink} target="_blank" rel="noopener noreferrer" aria-label="Download Umesh's resume">
             <Button classes="w-full text-xl mt-5 font-[Poppins]">View My Resume</Button>
           </a>
         </aside>

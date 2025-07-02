@@ -18,6 +18,7 @@ import { SiTailwindcss } from "react-icons/si";
 import Resume from "../assets/Resume.pdf";
 import { useGSAP } from "@gsap/react";
 import HoverName from "./HoverName";
+import { ResumeLink } from "../app/Links";
 
 const AboutMain = () => {
   const moveElRef = useRef();
@@ -187,7 +188,7 @@ const AboutMain = () => {
             </div>
             <a
               target="_blank"
-              href={Resume}
+              href={ResumeLink}
               className="lg:text-end block mt-9 w-full text-center"
               rel="noopener noreferrer"
               aria-label="Download Umesh Tummepalli's Resume (PDF)"
