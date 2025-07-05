@@ -66,7 +66,7 @@ const projData=[
       'imgPath':"AI.png",
     },
     {
-        "name": "Drive",
+        "name": "Storage Drive ",
         "type": "Full-Stack Storage App",
         "year": 2025,
         "organization": "Personal Project",
