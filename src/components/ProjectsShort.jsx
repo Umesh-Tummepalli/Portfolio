@@ -47,7 +47,7 @@ const ProjectsShort = () => {
         ref={cardContainerRef}
         >
           {/* Scrolling Project Cards */}
-          <Sliding speed={50} className="flex gap-8" pauseOnHover={false}>
+          <Sliding speed={100} className="flex gap-8" pauseOnHover={false} reverse={true}>
             {projData.slice(0, 3).map((item, index) => (
               <div
                 key={index}

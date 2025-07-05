@@ -29,9 +29,10 @@ const AboutInShort = () => {
       // Create animation
       gsap.to(validElements, {
           opacity: 1,
-          duration: 1,
-          stagger: 0.1,
+          stagger: 0.2,
+          duration:1,
           ease: "power2.out",
+          filter:"blur(0)",
           scrollTrigger: {
               trigger: containerRef.current,
               start: "top 70%",
@@ -39,7 +40,6 @@ const AboutInShort = () => {
               scrub: 1,
             //   markers: true, // Set to true for debugging
             },
-            filter:"blur(0)",
       });
     },
     { scope: containerRef, dependencies: [] }
@@ -70,7 +70,7 @@ const AboutInShort = () => {
       className="absolute top-1/2 left-0 -translate-y-1/2 w-full overflow-hidden pointer-events-none z-10 font-extrabold"
       aria-hidden="true"
     >
-      <SlidingText onHoverEffect={false} speed={500}>
+      <SlidingText onHoverEffect={false} speed={300}>
         <p 
           className="text-9xl md:text-[25rem] opacity-10 whitespace-nowrap text-white uppercase"
           style={{ fontFamily: "'Bebas Neue', sans-serif" }}
@@ -103,7 +103,7 @@ const AboutInShort = () => {
             .map((char, index) => (
               <span
                 key={index}
-                className="inline-block blur-[10px] ml-1"
+                className="inline-block blur-[5px] ml-1"
                 ref={(el) => {
                   if (el) textRef.current[index] = el;
                 }}

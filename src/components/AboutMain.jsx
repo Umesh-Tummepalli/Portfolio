@@ -86,7 +86,7 @@ const AboutMain = () => {
               About Me
             </h1>
             <div className="overflow-hidden">
-              <section className="space-y-2 pt-4 aboutPara" ref={pref} itemProp="description">
+              <section className="space-y-2 pt-4 aboutPara " ref={pref} itemProp="description">
                 <p>
                   Hi, I'm{" "}
                   <span className="text-teal-400 sm:whitespace-nowrap font-semibold" itemProp="name">

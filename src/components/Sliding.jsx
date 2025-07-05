@@ -5,31 +5,15 @@ const SlidingContent = ({
   speed = 50,
   gap = 32,
   className = "",
+  reverse = false,
   style = {},
 }) => {
   const containerRef = useRef(null);
   const contentRef = useRef(null);
-  const [cloneCount, setCloneCount] = useState(2);
 
   // Calculate needed clones and setup animation
   useEffect(() => {
     if (!containerRef.current || !contentRef.current) return;
-
-    const calculateClones = () => {
-      const container = containerRef.current;
-      const content = contentRef.current;
-
-      if (!container || !content) return;
-
-      const containerWidth = container.parentElement?.offsetWidth || 0;
-      const contentWidth = content.scrollWidth;
-
-      if (contentWidth === 0 || containerWidth === 0) return;
-
-      // Calculate how many clones we need to fill the viewport
-      const neededClones = Math.ceil((containerWidth * 2) / contentWidth);
-      setCloneCount(Math.max(2, neededClones));
-    };
 
     const setupAnimation = () => {
       const container = containerRef.current;
@@ -45,19 +29,7 @@ const SlidingContent = ({
 
     };
 
-    calculateClones();
     setupAnimation();
-
-    const resizeObserver = new ResizeObserver(() => {
-      calculateClones();
-      setupAnimation();
-    });
-
-    if (containerRef.current?.parentElement) {
-      resizeObserver.observe(containerRef.current.parentElement);
-    }
-
-    return () => resizeObserver.disconnect();
   }, [children, speed, gap]);
 
   // Pause on hover
@@ -85,12 +57,13 @@ const SlidingContent = ({
             transform: translateX(0);
           }
           100% {
-            transform: translateX(calc(-50% - var(--slide-gap) / 2));
+            transform: translateX(-100%);
           }
         }
-        .sliding-container {
+        .innerSlider {
           display: flex;
           animation: slide-left var(--slide-duration) linear infinite;
+          animation-direction: ${reverse ? "reverse" : "normal"};
         }
       `}</style>
 
@@ -103,7 +76,7 @@ const SlidingContent = ({
         {/* Scrolling content container */}
         <div
           ref={containerRef}
-          className="sliding-container whitespace-nowrap will-change-transform"
+          className="sliding-container whitespace-nowrap will-change-transform flex"
         >
           {/* Original content */}
           <div ref={contentRef} className="flex innerSlider">
@@ -111,11 +84,9 @@ const SlidingContent = ({
           </div>
 
           {/* Cloned content */}
-          {[...Array(cloneCount)].map((_, i) => (
-            <div key={`clone-${i}`} className="flex innerSlider">
-              {renderContentItems(children, `clone-${i}-`)}
+            <div  className="flex innerSlider">
+              {renderContentItems(children)}
             </div>
-          ))}
         </div>
       </div>
     </>
