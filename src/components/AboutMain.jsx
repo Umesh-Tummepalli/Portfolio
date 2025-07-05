@@ -216,7 +216,7 @@ const AboutMain = () => {
 
       <section className="p-4 rounded-3xl backdrop-blur-3xl backdrop-saturate-150 bg-white/10 border-white/20 border-1 m-4 text-4xl">
         <h2 className="sr-only">My Technical Skills</h2>
-        <SlidingContent pauseOnHover={false} speed={200}>
+        <SlidingContent pauseOnHover={false} speed={100}>
           <div className="flex justify-center items-center gap-2 border-1 p-2 border-white/20 rounded-2xl shadow-inner shadow-teal-400/30 hover:bg-white hover:text-black duration-300" aria-label="ReactJS">
             <GrReactjs aria-hidden="true" />
             <span className="text-xl">ReactJS</span>
