@@ -1,20 +1,734 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Primary Meta Tags -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Umesh Tummepalli | Full-Stack Developer & Cybersecurity Specialist |
+      React, Node.js Expert
+    </title>
+    <meta
+      name="description"
+      content="Umesh Tummepalli - Full-Stack Developer and Cybersecurity Specialist at SRMIST. Expert in React.js, Node.js, JavaScript, C++. 165+ LeetCode problems solved. View portfolio projects and contact for web development services."
+    />
+    <meta
+      name="keywords"
+      content="Umesh Tummepalli, Full-Stack Developer, React Developer, Node.js Developer, Cybersecurity Specialist, Web Developer, JavaScript Expert, C++ Programmer, SRMIST, Computer Science, Portfolio, LeetCode, GeeksforGeeks, Data Structures, Algorithms, Frontend Developer, Backend Developer, MERN Stack, Tailwind CSS, GSAP, AI Development, Task Management System, Recipe Application, Portfolio Website, Tic Tac Toe Game, Minimax Algorithm, Responsive Web Design, Mobile-First Design, Cross-Browser Compatibility, Git GitHub, Linux, Java, HTML5, CSS3, SQL Database, API Integration, Natural Language Processing, Chatbot Development, UI/UX Design, Problem Solving, Technical Documentation, Team Collaboration, Red Hat Certified, NPTEL Java, Udemy Frontend, Scaler C++, RHCSA Linux"
+    />
+    <meta name="author" content="Umesh Tummepalli" />
+
+    <!-- Enhanced SEO Meta Tags -->
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <meta
+      name="googlebot"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="yandex" content="index, follow" />
+    <meta name="revisit-after" content="3 days" />
+    <meta name="rating" content="general" />
+    <meta name="distribution" content="global" />
+    <meta name="geo.region" content="IN-AP" />
+    <meta name="geo.placename" content="Andhra Pradesh, India" />
+    <meta name="geo.position" content="13.0827;80.2707" />
+    <meta name="ICBM" content="13.0827, 80.2707" />
+    <meta name="language" content="en" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="msapplication-TileColor" content="#0f172a" />
+    <meta
+      name="copyright"
+      content="© 2025 Umesh Tummepalli. All rights reserved."
+    />
+    <meta
+      name="classification"
+      content="Technology, Web Development, Software Development, Cybersecurity"
+    />
+    <meta name="category" content="Technology" />
+    <meta name="coverage" content="Worldwide" />
+    <meta
+      name="target"
+      content="Software Companies, Startups, Tech Recruiters, Developers, Students"
+    />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta
+      name="apple-mobile-web-app-title"
+      content="Umesh Tummepalli Portfolio"
+    />
+    <meta name="application-name" content="Umesh Tummepalli Portfolio" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
     <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Italianno&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Umesh - Portfolio</title>
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/apple-icon-152x152.png"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/android-icon-192x192.png"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://umeshportfolio-beryl.vercel.app" />
+    <meta
+      property="og:title"
+      content="Umesh Tummepalli | Full-Stack Developer & Cybersecurity Specialist"
+    />
+    <meta
+      property="og:description"
+      content="Full-Stack Developer and Cybersecurity Specialist at SRMIST. Expert in React.js, Node.js, JavaScript, C++. 165+ LeetCode problems solved. GPA: 8.75/10.0. View portfolio projects and contact for web development services."
+    />
+    <meta
+      property="og:image"
+      content="https://umeshportfolio-beryl.vercel.app/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Umesh Tummepalli - Full-Stack Developer & Cybersecurity Specialist Portfolio"
+    />
+    <meta property="og:site_name" content="Umesh Tummepalli Portfolio" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:updated_time" content="2025-01-15T00:00:00Z" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://umeshportfolio-beryl.vercel.app"
+    />
+    <meta
+      property="twitter:title"
+      content="Umesh Tummepalli | Full-Stack Developer & Cybersecurity Specialist"
+    />
+    <meta
+      property="twitter:description"
+      content="Full-Stack Developer and Cybersecurity Specialist at SRMIST. Expert in React.js, Node.js, JavaScript, C++. 165+ LeetCode problems solved. View portfolio projects."
+    />
+    <meta
+      property="twitter:image"
+      content="https://umeshportfolio-beryl.vercel.app/og-image.png"
+    />
+    <meta
+      property="twitter:image:alt"
+      content="Umesh Tummepalli - Full-Stack Developer & Cybersecurity Specialist Portfolio"
+    />
+    <meta name="twitter:site" content="@Tummepalli70751" />
+    <meta name="twitter:creator" content="@Tummepalli70751" />
+
+    <!-- LinkedIn -->
+    <meta property="linkedin:owner" content="umesh-tummepalli-924362333" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://umeshportfolio-beryl.vercel.app" />
+
+    <!-- Alternative URLs -->
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://umeshportfolio-beryl.vercel.app"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-US"
+      href="https://umeshportfolio-beryl.vercel.app"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-IN"
+      href="https://umeshportfolio-beryl.vercel.app"
+    />
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:;"
+    />
+
+    <!-- Preconnect and DNS Prefetch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://www.linkedin.com" />
+    <link rel="dns-prefetch" href="https://github.com" />
+    <link rel="dns-prefetch" href="https://leetcode.com" />
+    <link rel="dns-prefetch" href="https://www.geeksforgeeks.org" />
+    <link rel="dns-prefetch" href="https://x.com" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Italianno&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Enhanced Person Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Umesh Tummepalli",
+        "url": "https://umeshportfolio-beryl.vercel.app",
+        "email": "umeshtummepallioff3@gmail.com",
+        "image": "https://umeshportfolio-beryl.vercel.app/profile-image.jpg",
+        "sameAs": [
+          "https://www.linkedin.com/in/umesh-tummepalli-924362333",
+          "https://github.com/Umesh-Tummepalli",
+          "https://x.com/Tummepalli70751",
+          "https://leetcode.com/u/umesh96/",
+          "https://www.geeksforgeeks.org/user/umeshtummu16z/"
+        ],
+        "jobTitle": "Full-Stack Developer & Cybersecurity Specialist",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Freelance"
+        },
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "SRM Institute of Science and Technology",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kattankulathur",
+            "addressRegion": "Tamil Nadu",
+            "addressCountry": "India"
+          }
+        },
+        "description": "Computer Science student and full-stack developer specializing in cybersecurity and modern web technologies. Currently pursuing B.Tech in Computer Science with Cyber Security specialization at SRMIST with 8.75/10.0 GPA. Solved 165+ LeetCode problems and actively contributes to GeeksforGeeks with 50+ submissions.",
+        "knowsAbout": [
+          "React.js",
+          "Node.js",
+          "JavaScript",
+          "C++",
+          "Java",
+          "HTML5",
+          "CSS3",
+          "Tailwind CSS",
+          "GSAP",
+          "Cybersecurity",
+          "Web Development",
+          "Full-Stack Development",
+          "Data Structures",
+          "Algorithms",
+          "Problem Solving",
+          "Git/GitHub",
+          "Linux",
+          "Windows",
+          "SQL Database",
+          "API Integration",
+          "Natural Language Processing",
+          "AI Development",
+          "Responsive Web Design",
+          "Mobile-First Design",
+          "Cross-Browser Compatibility",
+          "UI/UX Design",
+          "Technical Documentation",
+          "Team Collaboration",
+          "Express.js",
+          "MERN Stack",
+          "Minimax Algorithm",
+          "Chatbot Development"
+        ],
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Full-Stack Developer & Cybersecurity Specialist",
+          "occupationLocation": {
+            "@type": "Country",
+            "name": "India"
+          }
+        },
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Red Hat Certified System Administrator (RHCSA)",
+            "credentialCategory": "Linux Certification"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Java - NPTEL",
+            "credentialCategory": "Programming Certification"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Frontend Web Development - Udemy",
+            "credentialCategory": "Web Development Certification"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "C++ - Scaler",
+            "credentialCategory": "Programming Certification"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "C Programming - Udemy",
+            "credentialCategory": "Programming Certification"
+          }
+        ],
+        "memberOf": [
+          {
+            "@type": "Organization",
+            "name": "LeetCode",
+            "url": "https://leetcode.com/u/umesh96/"
+          },
+          {
+            "@type": "Organization",
+            "name": "GeeksforGeeks",
+            "url": "https://www.geeksforgeeks.org/user/umeshtummu16z/"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Enhanced Website Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Umesh Tummepalli Portfolio",
+        "description": "Professional portfolio showcasing Umesh Tummepalli's projects, skills, and experience as a full-stack developer and cybersecurity specialist. Features React.js, Node.js, JavaScript, and C++ projects with detailed technical implementations.",
+        "url": "https://umeshportfolio-beryl.vercel.app",
+        "author": {
+          "@type": "Person",
+          "name": "Umesh Tummepalli"
+        },
+        "inLanguage": "en-US",
+        "copyrightYear": "2025",
+        "copyrightHolder": {
+          "@type": "Person",
+          "name": "Umesh Tummepalli"
+        },
+        "keywords": "Full-Stack Developer, Cybersecurity Specialist, React.js, Node.js, JavaScript, C++, Web Development, Portfolio, SRMIST, Computer Science, LeetCode, GeeksforGeeks",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Software Companies, Tech Recruiters, Developers, Students, Startups"
+        },
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Umesh Tummepalli"
+        }
+      }
+    </script>
+
+    <!-- Professional Service Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Umesh Tummepalli - Web Development Services",
+        "description": "Professional web development services including full-stack development, React.js applications, Node.js backends, and cybersecurity solutions.",
+        "provider": {
+          "@type": "Person",
+          "name": "Umesh Tummepalli",
+          "url": "https://umeshportfolio-beryl.vercel.app"
+        },
+        "serviceType": "Web Development",
+        "areaServed": {
+          "@type": "Country",
+          "name": "India"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Web Development Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "React.js Development",
+                "description": "Custom React.js applications with modern UI/UX design"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Full-Stack Development",
+                "description": "Complete web applications using MERN stack"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Cybersecurity Solutions",
+                "description": "Security-focused web applications and consultations"
+              }
+            }
+          ]
+        }
+      }
+    </script>
+
+    <!-- Enhanced Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://umeshportfolio-beryl.vercel.app"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://umeshportfolio-beryl.vercel.app/about"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Projects",
+            "item": "https://umeshportfolio-beryl.vercel.app/projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Skills",
+            "item": "https://umeshportfolio-beryl.vercel.app/skills"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Experience",
+            "item": "https://umeshportfolio-beryl.vercel.app/experience"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "name": "Contact",
+            "item": "https://umeshportfolio-beryl.vercel.app/contact"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Software Application Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Umesh Tummepalli Portfolio Website",
+        "operatingSystem": "Any",
+        "applicationCategory": "WebApplication",
+        "author": {
+          "@type": "Person",
+          "name": "Umesh Tummepalli"
+        },
+        "description": "Interactive portfolio website built with React.js, showcasing full-stack development projects and cybersecurity expertise",
+        "url": "https://umeshportfolio-beryl.vercel.app",
+        "screenshot": "https://umeshportfolio-beryl.vercel.app/og-image.png",
+        "softwareVersion": "1.0.0",
+        "datePublished": "2025-01-15",
+        "dateModified": "2025-01-15",
+        "programmingLanguage": ["JavaScript", "React", "HTML", "CSS"],
+        "runtime": "Web Browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+
+    <!-- Performance Optimizations -->
+    <link rel="preload" href="/logo.png" as="image" type="image/png" />
+    <link
+      rel="preload"
+      href="/profile-image.jpg"
+      as="image"
+      type="image/jpeg"
+    />
+    <link rel="prefetch" href="/og-image.png" />
+    <link rel="prefetch" href="/resume.pdf" />
+
+    <!-- RSS Feed -->
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Umesh Tummepalli - Latest Projects"
+      href="/feed.xml"
+    />
+
+    <!-- Search Engine Verification -->
+    <meta
+      name="google-site-verification"
+      content="your-google-verification-code"
+    />
+    <meta name="msvalidate.01" content="your-bing-verification-code" />
+    <meta name="yandex-verification" content="your-yandex-verification-code" />
+
+    <!-- Additional Meta Tags for Better Indexing -->
+    <meta
+      name="subject"
+      content="Full-Stack Web Development and Cybersecurity Portfolio"
+    />
+    <meta
+      name="summary"
+      content="Umesh Tummepalli's professional portfolio showcasing full-stack development skills, cybersecurity expertise, and innovative projects built with React.js, Node.js, and modern web technologies."
+    />
+    <meta
+      name="abstract"
+      content="Computer Science student at SRMIST specializing in full-stack development and cybersecurity with 8.75/10.0 GPA, 165+ LeetCode problems solved, and multiple certifications including RHCSA Linux."
+    />
+    <meta
+      name="topic"
+      content="Web Development, Cybersecurity, Software Engineering, Computer Science"
+    />
+    <meta name="url" content="https://umeshportfolio-beryl.vercel.app" />
+    <meta
+      name="identifier-URL"
+      content="https://umeshportfolio-beryl.vercel.app"
+    />
+    <meta
+      name="pagename"
+      content="Umesh Tummepalli - Full-Stack Developer & Cybersecurity Specialist"
+    />
+    <meta name="reply-to" content="umeshtummepallioff3@gmail.com" />
+    <meta name="owner" content="Umesh Tummepalli" />
+    <meta name="designer" content="Umesh Tummepalli" />
+    <meta name="developer" content="Umesh Tummepalli" />
+
+    <!-- Dublin Core Metadata -->
+    <meta
+      name="DC.title"
+      content="Umesh Tummepalli - Full-Stack Developer & Cybersecurity Specialist Portfolio"
+    />
+    <meta name="DC.creator" content="Umesh Tummepalli" />
+    <meta
+      name="DC.subject"
+      content="Web Development, Cybersecurity, React.js, Node.js, JavaScript, C++, Computer Science"
+    />
+    <meta
+      name="DC.description"
+      content="Professional portfolio of Umesh Tummepalli showcasing full-stack development projects, cybersecurity expertise, and technical skills in modern web technologies."
+    />
+    <meta name="DC.publisher" content="Umesh Tummepalli" />
+    <meta name="DC.date" content="2025-01-15" />
+    <meta name="DC.type" content="Interactive Resource" />
+    <meta name="DC.format" content="text/html" />
+    <meta
+      name="DC.identifier"
+      content="https://umeshportfolio-beryl.vercel.app"
+    />
+    <meta name="DC.language" content="en-US" />
+    <meta name="DC.coverage" content="Worldwide" />
+    <meta
+      name="DC.rights"
+      content="© 2025 Umesh Tummepalli. All rights reserved."
+    />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Enhanced Noscript content for better SEO and accessibility -->
+    <noscript>
+      <header>
+        <h1>
+          Umesh Tummepalli - Full-Stack Developer & Cybersecurity Specialist
+        </h1>
+        <p>
+          <strong
+            >Computer Science Student at SRM Institute of Science and
+            Technology</strong
+          >
+        </p>
+        <p>
+          <strong
+            >GPA: 8.75/10.0 | 165+ LeetCode Problems Solved | 50+ GeeksforGeeks
+            Submissions</strong
+          >
+        </p>
+      </header>
+
+      <main>
+        <section>
+          <h2>About Me</h2>
+          <p>
+            I'm a passionate Full-Stack Developer and Cybersecurity Specialist
+            currently pursuing B.Tech in Computer Science with specialization in
+            Cyber Security at SRM Institute of Science and Technology. With
+            expertise in React.js, Node.js, JavaScript, C++, and Java, I create
+            innovative web solutions and secure applications.
+          </p>
+        </section>
+
+        <section>
+          <h2>Technical Skills</h2>
+          <h3>Programming Languages</h3>
+          <ul>
+            <li>JavaScript (React.js, Node.js, Express.js)</li>
+            <li>HTML5/CSS3 (Tailwind CSS, GSAP)</li>
+            <li>C/C++</li>
+            <li>Java</li>
+          </ul>
+
+          <h3>Tools & Technologies</h3>
+          <ul>
+            <li>Git/GitHub Version Control</li>
+            <li>Responsive Web Design</li>
+            <li>Linux/Windows Operating Systems</li>
+            <li>SQL Database</li>
+            <li>API Integration</li>
+            <li>Natural Language Processing</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Featured Projects</h2>
+          <ul>
+            <li>
+              <strong>Virtual Study Environment</strong> - Full-stack task
+              management system with HTML, CSS, JavaScript, and SQL database
+            </li>
+            <li>
+              <strong>React Cooking Recipe Application</strong> - React.js app
+              with search functionality and responsive design
+            </li>
+            <li>
+              <strong>Portfolio Website</strong> - Responsive portfolio using
+              React.js, HTML5, CSS3, JavaScript, and GSAP
+            </li>
+            <li>
+              <strong>AI Category Selector</strong> - AI-powered chatbot with
+              Mistral AI API integration
+            </li>
+            <li>
+              <strong>Tic Tac Toe Game</strong> - Interactive game with React,
+              Tailwind CSS, and Minimax algorithm
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Certifications</h2>
+          <ul>
+            <li>Red Hat Certified System Administrator (RHCSA) - Linux</li>
+            <li>Java - NPTEL</li>
+            <li>Frontend Web Development - Udemy</li>
+            <li>C++ - Scaler</li>
+            <li>C Programming - Udemy</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Professional Profiles</h2>
+          <ul>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/umesh-tummepalli-924362333"
+                rel="noopener noreferrer"
+                >LinkedIn Profile</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/Umesh-Tummepalli"
+                rel="noopener noreferrer"
+                >GitHub Profile</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://leetcode.com/u/umesh96/"
+                rel="noopener noreferrer"
+                >LeetCode Profile (165+ Problems Solved)</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.geeksforgeeks.org/user/umeshtummu16z/"
+                rel="noopener noreferrer"
+                >GeeksforGeeks Profile (50+ Submissions)</a
+              >
+            </li>
+            <li>
+              <a href="https://x.com/Tummepalli70751" rel="noopener noreferrer"
+                >Twitter Profile</a
+              >
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Contact Information</h2>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:umeshtummepallioff3@gmail.com"
+              >umeshtummepallioff3@gmail.com</a
+            >
+          </p>
+          <p><strong>Location:</strong> Andhra Pradesh, India</p>
+          <p>
+            <strong>Education:</strong> SRM Institute of Science and Technology
+            (2023 - Present)
+          </p>
+          <p><strong>Specialization:</strong> Cyber Security</p>
+        </section>
+      </main>
+
+      <footer>
+        <p>
+          This website requires JavaScript to function properly. Please enable
+          JavaScript in your browser to view the full interactive experience
+          with enhanced animations and features.
+        </p>
+        <p>© 2025 Umesh Tummepalli. All rights reserved.</p>
+      </footer>
+    </noscript>
   </body>
 </html>

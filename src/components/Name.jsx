@@ -82,7 +82,6 @@ const Name = ({ text }) => {
           className="inline-block hover:cursor-pointer will-change-transform px-1  shadow-black blur-[10px] opacity-0 "
           ref={(el) => (nameRef.current[index] = el)}
           onMouseEnter={() => handleMouseEnter(index)}
-          onMouseEnter={() => handleMouseEnter(index)}
           onFocus={() => handleMouseEnter(index)} // Added for keyboard accessibility
           aria-hidden="true" // Hide individual letters from screen readers
         >
