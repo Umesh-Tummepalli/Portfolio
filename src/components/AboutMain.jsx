@@ -4,17 +4,10 @@ import SlidingContent from "./Sliding";
 import TiltContainer from "./TiltContainer";
 import gsap from "gsap";
 import Button from "./Button";
-import { FaLinux } from "react-icons/fa";
-import { SiC, SiCplusplus, SiExpress } from "react-icons/si";
-import {
-  DiHtml5,
-  DiCss3,
-  DiJsBadge,
-  DiJava,
-  DiNodejsSmall,
-} from "react-icons/di";
+import { FaLinux, FaLinkedin, FaGithub, FaInstagram, FaEnvelope } from "react-icons/fa";
+import { SiC, SiCplusplus, SiExpress, SiTailwindcss } from "react-icons/si";
+import { DiHtml5, DiCss3, DiJsBadge, DiJava, DiNodejsSmall } from "react-icons/di";
 import { GrReactjs } from "react-icons/gr";
-import { SiTailwindcss } from "react-icons/si";
 import Resume from "../assets/Resume.pdf";
 import { useGSAP } from "@gsap/react";
 import HoverName from "./HoverName";
@@ -86,7 +79,7 @@ const AboutMain = () => {
               About Me
             </h1>
             <div className="overflow-hidden">
-              <section className="space-y-2 pt-4 aboutPara " ref={pref} itemProp="description">
+              <section className="space-y-2 pt-4 aboutPara" ref={pref} itemProp="description">
                 <p>
                   Hi, I'm{" "}
                   <span className="text-teal-400 sm:whitespace-nowrap font-semibold" itemProp="name">
@@ -314,7 +307,7 @@ const AboutMain = () => {
               rel="noopener noreferrer"
               aria-label="Connect with Umesh on LinkedIn"
             >
-              <i className="ri-linkedin-fill" aria-hidden="true"></i>
+              <FaLinkedin aria-hidden="true" />
             </a>
           </HoverName>
           <HoverName name="GitHub">
@@ -325,7 +318,7 @@ const AboutMain = () => {
               rel="noopener noreferrer"
               aria-label="View Umesh's GitHub profile"
             >
-              <i className="ri-github-line" aria-hidden="true"></i>
+              <FaGithub aria-hidden="true" />
             </a>
           </HoverName>
           <HoverName name="Instagram">
@@ -336,7 +329,7 @@ const AboutMain = () => {
               rel="noopener noreferrer"
               aria-label="Follow Umesh on Instagram"
             >
-              <i className="ri-instagram-line" aria-hidden="true"></i>
+              <FaInstagram aria-hidden="true" />
             </a>
           </HoverName>
           <HoverName name="Email">
@@ -347,7 +340,7 @@ const AboutMain = () => {
               rel="noopener noreferrer"
               aria-label="Email Umesh Tummepalli"
             >
-              <i className="ri-mail-fill" aria-hidden="true"></i>
+              <FaEnvelope aria-hidden="true" />
             </a>
           </HoverName>
         </section>

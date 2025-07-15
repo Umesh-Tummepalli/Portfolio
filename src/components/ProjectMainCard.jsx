@@ -3,6 +3,7 @@ import { useRef, useCallback, useState } from "react";
 import gsap from "gsap";
 import ProjectCard from "./ProjectCard";
 import Sliding from "./Sliding";
+import { FiExternalLink } from "react-icons/fi"; // <-- Added
 const ProjectMainCard = (props) => {
   const containerRef = useRef();
   const imgRef = useRef();
@@ -71,30 +72,30 @@ const ProjectMainCard = (props) => {
             }`}
           >
             <Sliding>
-              <div className="flex min-w-screen justify-between gap-3">
-                <span className="flex gap-3">
-                  <p>{props.title}</p>
-                  <i className="ri-arrow-right-up-line"></i>
-                </span>
-                <span className="flex gap-1">
-                  <p>{props.title}</p>
-                  <i className="ri-arrow-right-up-line"></i>
-                </span>
-                <span className="flex gap-1">
-                  <p>{props.title}</p>
-                  <i className="ri-arrow-right-up-line"></i>
-                </span>
-                <span className="flex gap-1">
-                  <p>{props.title}</p>
-                  <i className="ri-arrow-right-up-line"></i>
-                </span>
-                <span className="flex gap-1">
-                  <p>{props.title}</p>
-                  <i className="ri-arrow-right-up-line"></i>
-                </span>
-                
-              </div>
-            </Sliding>
+  <div className="flex min-w-screen justify-between gap-3">
+    <span className="flex gap-3">
+      <p>{props.title}</p>
+      <FiExternalLink className="inline" />
+    </span>
+    <span className="flex gap-1">
+      <p>{props.title}</p>
+      <FiExternalLink className="inline" />
+    </span>
+    <span className="flex gap-1">
+      <p>{props.title}</p>
+      <FiExternalLink className="inline" />
+    </span>
+    <span className="flex gap-1">
+      <p>{props.title}</p>
+      <FiExternalLink className="inline" />
+    </span>
+    <span className="flex gap-1">
+      <p>{props.title}</p>
+      <FiExternalLink className="inline" />
+    </span>
+  </div>
+</Sliding>
+
           </div>
         </div>
         <img
